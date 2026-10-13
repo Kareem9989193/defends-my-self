@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مذكرة طعن ودفاع رسمي - سيرفر GC</title>
+  <title>قضية جنائية - ضد فارس و أحمد حازم | سيرفر GC</title>
+  <meta name="description" content="صحيفة دعوى جنائية ضد المتهمين فارس وأحمد حازم بتهمة الإرهاب والتنظيم غير الإداري">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1a2a3a;
-      --accent-color: #c29d59;
-      --text-main: #222;
-      --text-muted: #555;
-      --bg-page: #f4f6f9;
+      --primary: #0f1923;
+      --primary-light: #1a2d40;
+      --accent-red: #c0392b;
+      --accent-red-dark: #962d22;
+      --accent-gold: #c29d59;
+      --accent-gold-light: #d4b06a;
+      --text-main: #1a1a1a;
+      --text-muted: #5a6270;
+      --bg-page: #e8edf2;
       --card-bg: #ffffff;
-      --border-color: #dcdcdc;
+      --danger-bg: #fdf2f2;
+      --danger-border: #e74c3c;
+      --evidence-bg: #f8f9fb;
+      --stamp-color: #c0392b;
     }
 
     * {
@@ -26,27 +34,44 @@
 
     body {
       font-family: 'Cairo', 'Amiri', Tahoma, sans-serif;
-      background-color: var(--bg-page);
+      background: var(--bg-page);
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(192, 57, 43, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(15, 25, 35, 0.04) 0%, transparent 50%);
       color: var(--text-main);
-      line-height: 1.8;
+      line-height: 1.9;
       padding: 30px 15px;
+      min-height: 100vh;
     }
 
+    /* Toolbar */
     .toolbar {
-      max-width: 850px;
-      margin: 0 auto 20px auto;
+      max-width: 880px;
+      margin: 0 auto 24px auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: white;
-      padding: 12px 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 16px 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(15, 25, 35, 0.25);
+      animation: slideDown 0.6s ease-out;
     }
 
-    .toolbar h3 {
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .toolbar .toolbar-info h3 {
       font-size: 16px;
-      color: var(--primary-color);
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .toolbar .toolbar-info p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
     }
 
     .btn-group {
@@ -55,66 +80,77 @@
     }
 
     .btn {
-      background: var(--primary-color);
+      background: rgba(255,255,255,0.1);
       color: white;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 9px 20px;
+      border-radius: 10px;
       font-family: 'Cairo', sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       text-decoration: none;
+      backdrop-filter: blur(4px);
     }
 
     .btn:hover {
-      background: #263d53;
-      transform: translateY(-1px);
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    .btn-gold {
-      background: var(--accent-color);
-      color: #111;
+    .btn-danger {
+      background: var(--accent-red);
+      border-color: var(--accent-red-dark);
     }
 
-    .btn-gold:hover {
-      background: #b08a46;
+    .btn-danger:hover {
+      background: var(--accent-red-dark);
     }
 
+    /* Document */
     .document-page {
-      max-width: 850px;
+      max-width: 880px;
       margin: 0 auto;
       background: var(--card-bg);
-      padding: 60px 65px;
-      border-radius: 4px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      padding: 65px 70px;
+      border-radius: 6px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
       position: relative;
-      border: 1px solid #e1e4e8;
+      border: 1px solid #d1d5db;
+      animation: fadeIn 0.8s ease-out 0.2s both;
     }
 
-    /* Watermark effect */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Watermark */
     .document-page::before {
-      content: "GC SERVER";
+      content: "سري للغاية";
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-30deg);
-      font-size: 110px;
+      transform: translate(-50%, -50%) rotate(-35deg);
+      font-size: 100px;
       font-weight: 900;
-      color: rgba(26, 42, 58, 0.025);
+      color: rgba(192, 57, 43, 0.03);
       pointer-events: none;
       z-index: 0;
-      letter-spacing: 5px;
+      letter-spacing: 10px;
+      white-space: nowrap;
     }
 
+    /* Header */
     .doc-header {
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 25px;
-      margin-bottom: 30px;
+      border-bottom: 3px solid var(--accent-red);
+      padding-bottom: 28px;
+      margin-bottom: 35px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -123,28 +159,64 @@
     }
 
     .doc-header .emblem {
-      width: 70px;
-      height: 70px;
-      background: var(--primary-color);
-      color: var(--accent-color);
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-red-dark) 100%);
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      font-size: 26px;
-      font-weight: 800;
-      border: 3px double var(--accent-color);
+      font-size: 22px;
+      font-weight: 900;
+      border: 3px double rgba(255,255,255,0.3);
+      box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+      position: relative;
+    }
+
+    .emblem::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 2px dashed var(--accent-red);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: pulse-ring 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.1; transform: scale(1.05); }
     }
 
     .doc-header .header-info {
       text-align: right;
     }
 
+    .doc-header .header-info .case-label {
+      display: inline-block;
+      background: var(--accent-red);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      animation: blink-badge 3s ease-in-out infinite;
+    }
+
+    @keyframes blink-badge {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
     .doc-header .header-info h1 {
-      font-size: 24px;
-      color: var(--primary-color);
-      font-weight: 800;
+      font-size: 26px;
+      color: var(--primary);
+      font-weight: 900;
       margin-bottom: 4px;
+      line-height: 1.3;
     }
 
     .doc-header .header-info p {
@@ -152,51 +224,83 @@
       color: var(--text-muted);
     }
 
+    /* Classification Banner */
+    .classification-banner {
+      background: linear-gradient(90deg, var(--accent-red) 0%, #e74c3c 50%, var(--accent-red) 100%);
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin: -65px -70px 30px -70px;
+      border-radius: 6px 6px 0 0;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Meta Box */
     .meta-box {
-      background: #f8fafc;
-      border-right: 4px solid var(--primary-color);
-      padding: 16px 20px;
+      background: #f8f9fc;
+      border-right: 5px solid var(--accent-red);
+      padding: 20px 24px;
       margin-bottom: 30px;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 10px 10px 0;
       position: relative;
       z-index: 1;
       font-size: 15px;
     }
 
     .meta-box div {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
     }
+
     .meta-box div:last-child {
       margin-bottom: 0;
     }
 
     .meta-box strong {
-      color: var(--primary-color);
+      color: var(--primary);
       display: inline-block;
-      min-width: 140px;
-    }
-
-    .section-title {
-      font-size: 18px;
-      color: var(--primary-color);
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 8px;
-      margin: 30px 0 15px 0;
+      min-width: 150px;
       font-weight: 700;
-      position: relative;
-      z-index: 1;
     }
 
-    .section-title span {
-      background: #f1f5f9;
-      color: var(--accent-color);
-      font-size: 14px;
-      padding: 2px 10px;
-      border-radius: 4px;
-      margin-left: 8px;
+    .meta-box .accused-name {
+      color: var(--accent-red);
       font-weight: 800;
     }
 
+    /* Section Titles */
+    .section-title {
+      font-size: 19px;
+      color: var(--primary);
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin: 35px 0 18px 0;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title .num-badge {
+      background: var(--primary);
+      color: var(--accent-gold);
+      font-size: 13px;
+      padding: 3px 14px;
+      border-radius: 6px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* Content */
     p, li {
       font-size: 15px;
       color: #333;
@@ -206,64 +310,249 @@
     }
 
     .article-clause {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       background: #fff;
-    }
-
-    .article-clause h4 {
-      font-size: 15px;
-      color: #1e3a5f;
-      margin-bottom: 5px;
-      font-weight: 700;
-    }
-
-    .quote-box {
-      background: #fdfaf3;
-      border-right: 3px solid var(--accent-color);
-      padding: 10px 16px;
-      margin: 8px 0;
-      font-style: italic;
-      color: #4a3e25;
-      font-family: 'Amiri', serif;
-      font-size: 16px;
-    }
-
-    ul {
-      list-style-type: disc;
-      padding-right: 25px;
-      margin: 8px 0 14px 0;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    .demands-box {
-      background: #f0f7ff;
-      border: 1px solid #c8e1ff;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 25px 0;
       position: relative;
       z-index: 1;
     }
 
-    .demands-box h3 {
-      color: #0b4f9c;
-      font-size: 17px;
-      margin-bottom: 12px;
+    .article-clause h4 {
+      font-size: 15.5px;
+      color: var(--primary-light);
+      margin-bottom: 6px;
       font-weight: 700;
     }
 
+    /* Accused Cards */
+    .accused-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .accused-card {
+      background: var(--danger-bg);
+      border: 1px solid #f5c6cb;
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .accused-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.12);
+    }
+
+    .accused-card::before {
+      content: '⚠️';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 20px;
+      opacity: 0.3;
+    }
+
+    .accused-card .card-label {
+      font-size: 11px;
+      color: var(--accent-red);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .accused-card h3 {
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .accused-card .charge {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .accused-card .charge strong {
+      color: var(--accent-red);
+    }
+
+    /* Evidence Section */
+    .evidence-box {
+      background: var(--evidence-bg);
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .evidence-box h3 {
+      color: var(--primary);
+      font-size: 17px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .evidence-item {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .evidence-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .evidence-item:hover {
+      border-color: var(--accent-red);
+      box-shadow: 0 2px 12px rgba(192, 57, 43, 0.08);
+    }
+
+    .evidence-item .ev-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .evidence-item .ev-label {
+      font-size: 12px;
+      background: var(--primary);
+      color: var(--accent-gold);
+      padding: 2px 12px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .evidence-item .ev-number {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .evidence-item .ev-desc {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .evidence-item .ev-desc strong {
+      color: var(--accent-red);
+    }
+
+    .evidence-item audio {
+      width: 100%;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: #fef9f0;
+      border-right: 4px solid var(--accent-red);
+      padding: 12px 18px;
+      margin: 10px 0;
+      font-style: italic;
+      color: #5a3e1b;
+      font-family: 'Amiri', serif;
+      font-size: 16.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-box::before {
+      content: '"';
+      font-size: 40px;
+      color: var(--accent-red);
+      opacity: 0.2;
+      position: absolute;
+      top: -5px;
+      left: 15px;
+      font-family: serif;
+    }
+
+    /* Lists */
+    ul {
+      list-style-type: none;
+      padding-right: 5px;
+      margin: 10px 0 16px 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      padding-right: 20px;
+      position: relative;
+    }
+
+    li::before {
+      content: '▪';
+      color: var(--accent-red);
+      position: absolute;
+      right: 0;
+      font-size: 12px;
+      top: 4px;
+    }
+
+    /* Demands Box */
+    .demands-box {
+      background: linear-gradient(135deg, #fdf2f2 0%, #fff5f5 100%);
+      border: 2px solid var(--accent-red);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 30px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .demands-box::before {
+      content: '⚖️';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      background: white;
+      padding: 0 10px;
+    }
+
+    .demands-box h3 {
+      color: var(--accent-red);
+      font-size: 18px;
+      margin-bottom: 14px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .demands-box li::before {
+      content: '⬤';
+      font-size: 8px;
+      top: 6px;
+    }
+
+    /* Signatures */
     .signatures {
-      margin-top: 45px;
+      margin-top: 50px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       position: relative;
       z-index: 1;
-      padding-top: 20px;
-      border-top: 1px dashed #cbd5e1;
+      padding-top: 25px;
+      border-top: 2px dashed #d1d5db;
     }
 
     .sign-col {
@@ -271,27 +560,96 @@
     }
 
     .sign-col p {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-bottom: 5px;
+      text-align: center;
     }
 
     .sign-name {
       font-size: 18px;
-      font-weight: 700;
-      color: var(--primary-color);
+      font-weight: 800;
+      color: var(--primary);
     }
 
     .official-stamp {
-      border: 2px dashed var(--accent-color);
-      padding: 10px 20px;
-      border-radius: 8px;
-      color: var(--accent-color);
-      font-weight: 700;
-      font-size: 13px;
-      transform: rotate(-3deg);
+      border: 3px double var(--accent-red);
+      padding: 12px 22px;
+      border-radius: 10px;
+      color: var(--accent-red);
+      font-weight: 800;
+      font-size: 12px;
+      transform: rotate(-4deg);
+      text-align: center;
+      line-height: 1.6;
+      position: relative;
     }
 
+    .official-stamp::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px dashed rgba(192, 57, 43, 0.3);
+      border-radius: 7px;
+    }
+
+    /* Date Footer */
+    .date-footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 13px;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Classification Bottom */
+    .classification-bottom {
+      background: linear-gradient(90deg, var(--accent-red) 0%, #e74c3c 50%, var(--accent-red) 100%);
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin: 30px -70px -65px -70px;
+      border-radius: 0 0 6px 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .document-page {
+        padding: 40px 25px;
+      }
+      .classification-banner {
+        margin: -40px -25px 25px -25px;
+      }
+      .classification-bottom {
+        margin: 30px -25px -40px -25px;
+      }
+      .accused-cards {
+        grid-template-columns: 1fr;
+      }
+      .toolbar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      .doc-header {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 15px;
+      }
+      .signatures {
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+      }
+    }
+
+    /* Print */
     @media print {
       body {
         background: white;
@@ -306,106 +664,203 @@
         padding: 40px 30px;
         max-width: 100%;
       }
+      .classification-banner,
+      .classification-bottom {
+        margin-left: -30px;
+        margin-right: -30px;
+      }
+      .accused-card:hover,
+      .evidence-item:hover {
+        transform: none;
+        box-shadow: none;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="toolbar">
-    <div>
-      <h3>مذكرة طعن رسمية جاهزة للتقديم في سيرفر GC</h3>
-      <p style="font-size: 12px; color: #666;">يمكنك الضغط على "طباعة / حفظ PDF" لحفظها كمستند رسمي وإرساله</p>
+    <div class="toolbar-info">
+      <h3>📁 صحيفة دعوى جنائية - سيرفر GC</h3>
+      <p>مستند رسمي سري - للجهات القضائية فقط</p>
     </div>
     <div class="btn-group">
-      <button class="btn btn-gold" onclick="window.print()">🖨️ طباعة / حفظ كـ PDF</button>
+      <button class="btn btn-danger" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
       <button class="btn" onclick="navigator.clipboard.writeText(document.querySelector('.document-page').innerText); alert('تم نسخ النص بالكامل!')">📋 نسخ النص</button>
     </div>
   </div>
 
   <div class="document-page">
-    
+
+    <div class="classification-banner">🔴 سري للغاية — مستند قضائي رسمي 🔴</div>
+
     <div class="doc-header">
       <div class="header-info">
-        <h1>مذكرة طعن ودفاع رسمي</h1>
-        <p>مقدمة أمام هيئة القضاء وإدارة سيرفر GC الموقرة</p>
+        <div class="case-label">قضية جنائية عاجلة</div>
+        <h1>صحيفة اتهام ودعوى جنائية رسمية</h1>
+        <p>مقدمة أمام هيئة القضاء العليا وإدارة سيرفر GC الموقرة</p>
       </div>
-      <div class="emblem">GC</div>
+      <div class="emblem">⚖️</div>
     </div>
 
     <div class="meta-box">
-      <div><strong>مقدم الطعن:</strong> العضو كريم (Karim)</div>
-      <div><strong>موضوع الطعن:</strong> الطعن على القرار التأديبي القاضي بإيقاف صلاحيات الساوند بورد ورفض الكليبات</div>
-      <div><strong>المرجع الدستوري:</strong> المادة (2)، المادة (4)، والحكم الختامي من دستور GC الرسمي</div>
+      <div><strong>رقم القضية:</strong> GC-CRIM-2026-001</div>
+      <div><strong>تاريخ التقديم:</strong> 13 أكتوبر 2026</div>
+      <div><strong>مقدم الدعوى:</strong> العضو كريم (Karim) — بصفته المدعي</div>
+      <div><strong>المتهم الأول:</strong> <span class="accused-name">فارس (Fares)</span></div>
+      <div><strong>المتهم الثاني:</strong> <span class="accused-name">أحمد حازم (Ahmed Hazem)</span></div>
+      <div><strong>التهم الموجهة:</strong> <span class="accused-name">الإرهاب — التنظيم غير الإداري — التحرش — إساءة استخدام السلطة</span></div>
+      <div><strong>التصنيف:</strong> قضية جنائية من الدرجة الأولى</div>
     </div>
 
-    <div class="section-title"><span>أولاً</span> الدفوع الشكلية (مشروعية الطعن وبطلان مصادرة الاستئناف)</div>
+    <!-- المتهمون -->
+    <div class="section-title">
+      <span class="num-badge">أولاً</span>
+      بيان المتهمين والتهم الموجهة
+    </div>
 
-    <div class="article-clause">
-      <h4>1. كفالة الحق في الطعن بموجب الدستور:</h4>
-      <p>تنص <strong>المادة الرابعة (بند 1)</strong> من دستور GC صراحة على:</p>
-      <div class="quote-box">«يحق لكل عضو الطعن على أي عقوبة يعتقد أنها غير عادلة أو غير مبررة.»</div>
-      <p>كما يقرر <strong>الحكم الختامي</strong> من الدستور أن:</p>
-      <div class="quote-box">«يُعد هذا الدستور الوثيقة الرسمية المنظمة لسيرفر GC، ويلتزم جميع الأعضاء والمحامين والقضاة والأونر بأحكامه.»</div>
-      <p>وعليه، فإن الجملة الواردة في نهاية القرار المطعون فيه والتي تنص على أن <em>"أي شكل من أشكال الاستئناف مرفوض تماماً"</em> هي عبارة باطلة ومنعدمة الأثر الدستوري، لكونها تصادر حقاً أصيلاً كفله الدستور الأعلى لكافة الأعضاء دون استثناء.</p>
+    <div class="accused-cards">
+      <div class="accused-card">
+        <div class="card-label">المتهم الأول</div>
+        <h3>فارس (Fares)</h3>
+        <div class="charge">
+          <strong>التهمة:</strong> الإرهاب والتنظيم غير الإداري<br>
+          <strong>الوصف:</strong> استخدام مصطلح "يا كو بوس" وهو لقب يُطلق على رؤساء العصابات والتنظيمات الإرهابية، مما يدل على ممارسة نشاط تنظيمي غير إداري داخل السيرفر وتهديد أمنه واستقراره.
+        </div>
+      </div>
+      <div class="accused-card">
+        <div class="card-label">المتهم الثاني</div>
+        <h3>أحمد حازم (Ahmed Hazem)</h3>
+        <div class="charge">
+          <strong>التهمة:</strong> التحرش وطلب محتوى إباحي<br>
+          <strong>الوصف:</strong> قيام المتهم بطلب صور عارية (Nudes) من الآنسات، وهو سلوك يُعد تحرشاً صريحاً ومخالفة جسيمة لقواعد السيرفر والأخلاق العامة.
+        </div>
+      </div>
+    </div>
+
+    <!-- الوقائع -->
+    <div class="section-title">
+      <span class="num-badge">ثانياً</span>
+      سرد الوقائع وملابسات القضية
     </div>
 
     <div class="article-clause">
-      <h4>2. حسن النية وسلامة المقصد:</h4>
-      <p>يؤكد الطاعن احترامه التام لإدارة السيرفر وهيئة قضائه، ويتقدم بهذا الطعن إعمالاً لنص <strong>المادة الرابعة (بند 4)</strong> التي تقضي بأن <em>«لا يُعد الطعن بحسن نية مخالفةً في حد ذاته»</em>، بهدف إيضاح الحقائق وتطبيق أحكام العدالة.</p>
-    </div>
-
-    <div class="section-title"><span>ثانياً</span> الدفوع الموضوعية وأوجه بطلان القرار</div>
-
-    <div class="article-clause">
-      <h4>1. مبدأ الشرعية وعدم رجعية القواعد العقابية:</h4>
+      <h4>1. واقعة المتهم الأول (فارس):</h4>
+      <p>ثبت بالدليل الصوتي المرفق أن المتهم الأول "فارس" يستخدم مصطلح <strong>"يا كو بوس"</strong> وهو مصطلح خطير يُطلق على رؤساء العصابات والتنظيمات المسلحة. استخدام هذا المصطلح يكشف عن:</p>
       <ul>
-        <li>القاعدة الدستورية الراسخة تنص على أنه <strong>"لا عقوبة ولا تجريم إلا بنص سابق"</strong>، والأصل في تصرفات الأعضاء الإباحة ما لم يرد نص صريح بالنهي.</li>
-        <li>الواقعة المنسوبة للطاعن والقرار التأديبي صدرا في تاريخ <strong>سابق لإقرار وصدور دستور GC</strong>، في وقت كان فيه النظام التقني والعرف السائد بالسيرفر يتيح للجميع حذف وإضافة الساوند بوردز دون أي حظر أو لائحة منظمة.</li>
-        <li>لا يجوز قانوناً استحداث نصوص عقابية جديدة في الدستور ثم تطبيقها بأثر رجعي على أفعال جرت في ظل إباحة كاملة ودون تنبيه مسبق.</li>
+        <li>وجود تنظيم غير إداري داخل السيرفر يعمل خارج نطاق الإدارة الرسمية</li>
+        <li>محاولة فرض سلطة موازية تهدد النظام العام والأمن الداخلي للسيرفر</li>
+        <li>تبني ألقاب ومصطلحات مرتبطة بالجريمة المنظمة والإرهاب</li>
+        <li>تشكيل خلية أو تنظيم سري يعمل على زعزعة استقرار السيرفر</li>
       </ul>
     </div>
 
     <div class="article-clause">
-      <h4>2. انعدام إجراءات التحقيق وإهدار حق الدفاع:</h4>
+      <h4>2. واقعة المتهم الثاني (أحمد حازم):</h4>
+      <p>ثبت بالدليل الصوتي المرفق أن المتهم الثاني "أحمد حازم" يقوم بطلب <strong>صور عارية (Nudes)</strong> من الآنسات داخل السيرفر، وهو ما يُشكل:</p>
       <ul>
-        <li>ذكر القرار في أسبابه أن الإجراء جاء <em>"بعد تحقيق"</em>؛ والحقيقة القاطعة أن الطاعن <strong>لم يتم استدعاؤه مطلقاً، ولم يُفتح معه أي تحقيق أو روم استماع</strong>، ولم يُمنح فرصة تقديم دفاعه أو توكيل محامٍ وفق ما تقرره <strong>المادة الثانية</strong> من الدستور.</li>
-        <li>صدور القرار غيابياً يجعله فاقداً لسلامة الإجراءات وضمانات العدالة الطبيعية.</li>
+        <li>تحرش جنسي صريح بأعضاء السيرفر من الإناث</li>
+        <li>انتهاك صارخ لقواعد السلوك والأخلاق العامة المنصوص عليها في دستور السيرفر</li>
+        <li>تهديد لسلامة وأمان البيئة الرقمية لجميع الأعضاء</li>
+        <li>سلوك إجرامي يستوجب أشد العقوبات التأديبية</li>
       </ul>
+    </div>
+
+    <!-- الأدلة -->
+    <div class="section-title">
+      <span class="num-badge">ثالثاً</span>
+      الأدلة والمستندات المرفقة
+    </div>
+
+    <div class="evidence-box">
+      <h3>🎧 الأدلة الصوتية المسجلة</h3>
+      
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-label">دليل صوتي</span>
+          <span class="ev-number">الدليل رقم 1</span>
+        </div>
+        <div class="ev-desc">
+          تسجيل صوتي يثبت استخدام المتهم <strong>فارس</strong> لمصطلح <strong>"يا كو بوس"</strong> — وهو لقب رؤساء العصابات والتنظيمات الإرهابية — مما يؤكد وجود تنظيم غير إداري.
+        </div>
+        <audio controls preload="metadata">
+          <source src="evidence_1.mp3" type="audio/mpeg">
+          المتصفح لا يدعم تشغيل الملفات الصوتية.
+        </audio>
+      </div>
+
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-label">دليل صوتي</span>
+          <span class="ev-number">الدليل رقم 2</span>
+        </div>
+        <div class="ev-desc">
+          تسجيل صوتي يثبت قيام المتهم <strong>أحمد حازم</strong> بطلب <strong>صور عارية (Nudes)</strong> من الآنسات داخل السيرفر، وهو تحرش صريح وسلوك مُجرَّم.
+        </div>
+        <audio controls preload="metadata">
+          <source src="evidence_2.mp3" type="audio/mpeg">
+          المتصفح لا يدعم تشغيل الملفات الصوتية.
+        </audio>
+      </div>
+    </div>
+
+    <!-- الأساس القانوني -->
+    <div class="section-title">
+      <span class="num-badge">رابعاً</span>
+      الأساس القانوني والدستوري للاتهام
     </div>
 
     <div class="article-clause">
-      <h4>3. انتفاء القصد الإضراري وحقيقة "المصلحة الشخصية":</h4>
-      <ul>
-        <li>الساوند بورد التي تم حذفها كانت <strong>بصوت الطاعن نفسه شخصياً</strong> ومحتوى يخصه ("زوقو")، وحذف العضو لمحتواه الشخصي لا يلحق أي ضرر بحقوق الأعضاء أو السيرفر.</li>
-        <li>الدافع الحقيقي للحذف كان المصلحة العامة للسيرفر لتفريغ مساحة شاغرة (Slots) لرفع ساوند بوردز أخرى جديدة تفيد الجميع في ظل محدودية السعة المتاحة، ولم يكن هناك أي دافع لتحقيق مكاسب شخصية أو الإضرار بالسيرفر.</li>
-      </ul>
+      <h4>1. مخالفة المادة الأولى من دستور GC:</h4>
+      <div class="quote-box">«يُحظر على أي عضو القيام بأفعال تهدد أمن واستقرار السيرفر أو تُسيء لأعضائه.»</div>
+      <p>كلا المتهمين خالفا هذا النص الدستوري مخالفة صريحة؛ الأول بتشكيل تنظيم غير إداري، والثاني بالتحرش بأعضاء السيرفر.</p>
     </div>
 
     <div class="article-clause">
-      <h4>4. الغلو في الجزاء وتجاوز الحدود الدستورية:</h4>
+      <h4>2. مخالفة قواعد السلوك العام:</h4>
+      <p>إن استخدام ألقاب العصابات وطلب محتوى إباحي من الأعضاء يُعد سلوكاً مخالفاً لكل الأعراف والقوانين المنظمة للمجتمعات الرقمية، ويستوجب المحاكمة والعقاب الرادع.</p>
+    </div>
+
+    <div class="article-clause">
+      <h4>3. خطورة الأفعال المنسوبة للمتهمين:</h4>
       <ul>
-        <li>حتى لو نُظر في أحكام الدستور الحالي، فإن <strong>المادة الأولى</strong> لم تتضمن أي عقوبة تقضي بحظر رفع "المقاطع/الكليبات"، بل اقتصرت الجزاءات على الساوند بورد فقط. توسع القرار في منع الكليبات ومصادرة حق الاستئناف يمثل غلواً وتجاوزاً صريحاً للدستور.</li>
+        <li><strong>فارس:</strong> تشكيل تنظيم إرهابي غير إداري يهدد أمن السيرفر — جريمة من الدرجة الأولى</li>
+        <li><strong>أحمد حازم:</strong> التحرش الجنسي وطلب محتوى فاضح — جريمة أخلاقية من الدرجة الأولى</li>
       </ul>
     </div>
 
+    <!-- الطلبات -->
     <div class="demands-box">
-      <h3>ثالثاً: الطلبات الختامية</h3>
-      <p>يلتمس الطاعن (كريم) من السادة القضاة وإدارة السيرفر الموقرة:</p>
+      <h3>خامساً: الطلبات والعقوبات المطلوبة</h3>
+      <p>يلتمس المدعي (كريم) من هيئة القضاء العليا بسيرفر GC الموقرة الحكم بالآتي:</p>
       <ul>
-        <li><strong>أصلياً:</strong> قبول الطعن شكلاً، وفي الموضوع: إلغاء القرار التأديبي بجميع آثاره، وسحب الإعلان الصادر بحقه، واستعادة كامل صلاحياته، لانتفاء النص المحظور وقت الواقعة وثبوت حسن النية.</li>
-        <li><strong>احتياطياً:</strong> الاكتفاء بالفترة التي انقضت منذ صدور القرار حتى تاريخه كجزاء كافٍ، وإلغاء حظر المقاطع (الكليبات) الذي لا سند له في الدستور.</li>
+        <li><strong>بالنسبة للمتهم الأول (فارس):</strong> إدانته بتهمة الإرهاب والتنظيم غير الإداري، وتوقيع أقصى العقوبات التأديبية المنصوص عليها في الدستور، بما في ذلك الباند الدائم من السيرفر</li>
+        <li><strong>بالنسبة للمتهم الثاني (أحمد حازم):</strong> إدانته بتهمة التحرش الجنسي وطلب محتوى فاضح، وتوقيع عقوبة الباند الدائم مع التشهير بفعلته كرادع لغيره</li>
+        <li><strong>إلزام المتهمين:</strong> بتقديم اعتذار رسمي علني لأعضاء السيرفر</li>
+        <li><strong>حفظ الأدلة:</strong> في سجلات السيرفر الرسمية كمرجع دائم</li>
+        <li><strong>نشر الحكم:</strong> في القناة الرسمية للسيرفر ليكون عبرة وعظة</li>
       </ul>
     </div>
 
+    <!-- التوقيعات -->
     <div class="signatures">
       <div class="sign-col">
-        <p>مقدم الطعن</p>
-        <div class="sign-name">العضو / كريم</div>
+        <p>المدعي / مقدم الدعوى</p>
+        <div class="sign-name">العضو / كريم (Karim)</div>
       </div>
       <div class="official-stamp">
-        مستند رسمي - سيرفر GC<br>حق مكفول بالمادة (4)
+        مستند قضائي رسمي<br>
+        سيرفر GC<br>
+        ⚖️ هيئة القضاء العليا
       </div>
     </div>
+
+    <div class="date-footer">
+      <p>صدر في: 13 أكتوبر 2026 — الساعة 19:39 بتوقيت القاهرة</p>
+      <p>جميع الحقوق محفوظة لهيئة القضاء في سيرفر GC</p>
+    </div>
+
+    <div class="classification-bottom">🔴 سري للغاية — نهاية المستند 🔴</div>
 
   </div>
 
