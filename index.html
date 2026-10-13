@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تقرير التدقيق الدستوري وطلب المكافأة التشريعية | سيرفر GC</title>
-  <meta name="description" content="تقرير المراجعة الدستورية وكشف الثغرات التشريعية في دستور سيرفر GC مع خطاب طلب المكافأة التقديرية باللغة العربية الفصحى">
+  <title>صحيفة دعوى جنائية وتأديبية ضد مصطفى إيهاب | سيرفر GC</title>
+  <meta name="description" content="صحيفة ادعاء ودعوى جنائية وتأديبية رسمية ضد المتهم مصطفى إيهاب بتهمة التحرش اللفظي ونشر صور بالذكاء الاصطناعي وانتهاك خصوصية العائلة والتهديد">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0b131b;
-      --primary-light: #162433;
-      --primary-card: #1c2d40;
-      --accent-gold: #d4af37;
-      --accent-gold-light: #f3e5ab;
-      --accent-gold-dark: #aa841e;
-      --accent-red: #e74c3c;
-      --accent-green: #2ecc71;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --bg-page: #f1f5f9;
+      --primary: #0f1923;
+      --primary-light: #1c2b3a;
+      --primary-dark: #090e14;
+      --accent-gold: #c29d59;
+      --accent-gold-light: #dfba78;
+      --accent-red: #c0392b;
+      --accent-red-soft: #fcf0ee;
+      --accent-blue: #2980b9;
+      --accent-blue-soft: #ebf5fb;
+      --text-main: #1a1a1a;
+      --text-muted: #5a6270;
+      --bg-page: #edf1f5;
       --card-bg: #ffffff;
       --border-color: #cbd5e1;
     }
@@ -35,10 +36,10 @@
       font-family: 'Cairo', 'Amiri', Tahoma, sans-serif;
       background: var(--bg-page);
       background-image: 
-        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(22, 36, 51, 0.06) 0%, transparent 40%);
+        radial-gradient(circle at 15% 20%, rgba(192, 57, 43, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(15, 25, 35, 0.06) 0%, transparent 40%);
       color: var(--text-main);
-      line-height: 1.9;
+      line-height: 1.85;
       padding: 25px 15px;
       min-height: 100vh;
     }
@@ -53,8 +54,8 @@
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       padding: 16px 26px;
       border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(11, 19, 27, 0.25);
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 10px 30px rgba(15, 25, 35, 0.25);
+      border: 1px solid rgba(194, 157, 89, 0.3);
     }
 
     .toolbar-info h3 {
@@ -98,16 +99,15 @@
       transform: translateY(-2px);
     }
 
-    .btn-gold {
-      background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
-      color: #0b131b;
-      border-color: var(--accent-gold-light);
+    .btn-red {
+      background: linear-gradient(135deg, var(--accent-red) 0%, #962d22 100%);
+      color: #fff;
+      border-color: #e74c3c;
       font-weight: 700;
     }
 
-    .btn-gold:hover {
-      background: var(--accent-gold-light);
-      color: #0b131b;
+    .btn-red:hover {
+      background: #e74c3c;
     }
 
     /* صحيفة المستند الرئيسي */
@@ -119,6 +119,20 @@
       padding: 45px 42px;
       box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
       border: 1px solid var(--border-color);
+    }
+
+    /* الشريط التصنيفي */
+    .classification-ribbon {
+      text-align: center;
+      background: var(--accent-red-soft);
+      color: var(--accent-red);
+      border: 1px dashed var(--accent-red);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
     }
 
     /* ترويسة الوثيقة */
@@ -150,17 +164,17 @@
       line-height: 1;
       padding: 12px 18px;
       background: #fdfaf3;
-      border: 2px solid var(--accent-gold);
+      border: 2px solid var(--accent-red);
       border-radius: 14px;
     }
 
-    /* شريط البيانات الأساسية */
-    .meta-grid {
+    /* شبكة البيانات الأساسية */
+    .meta-box {
       background: #f8fafc;
       border: 1px solid var(--border-color);
-      border-right: 5px solid var(--accent-gold);
+      border-right: 5px solid var(--accent-red);
       border-radius: 12px;
-      padding: 18px 24px;
+      padding: 20px 24px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px 24px;
@@ -168,45 +182,53 @@
       font-size: 14px;
     }
 
-    .meta-grid div strong {
+    .meta-box div strong {
       color: var(--primary);
     }
 
-    /* إشعار التقديم والمكافأة */
-    .reward-banner {
-      background: linear-gradient(135deg, #0b131b 0%, #162433 100%);
-      color: #fff;
-      padding: 24px 28px;
+    .badge-status {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* بطاقة المتهم */
+    .accused-card {
+      background: #fffafa;
+      border: 1px solid #fecaca;
       border-radius: 14px;
-      border-right: 6px solid var(--accent-gold);
-      margin-bottom: 35px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      padding: 22px 26px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 14px rgba(192, 57, 43, 0.05);
     }
 
-    .reward-banner h3 {
-      color: var(--accent-gold);
-      font-size: 18px;
-      margin-bottom: 8px;
+    .accused-card-header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
-    }
-
-    .reward-banner p {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
-      line-height: 1.85;
       margin-bottom: 12px;
     }
 
-    .reward-banner ul {
-      margin-right: 24px;
-      font-size: 13.5px;
-      color: var(--accent-gold-light);
+    .accused-card-header h3 {
+      font-size: 18px;
+      color: var(--accent-red);
+      font-weight: 800;
     }
 
-    .reward-banner li {
+    .charges-list {
+      margin-right: 22px;
+      margin-top: 10px;
+      font-size: 14.5px;
+      color: #7f1d1d;
+    }
+
+    .charges-list li {
       margin-bottom: 6px;
+      font-weight: 600;
     }
 
     /* عناوين الأقسام */
@@ -231,62 +253,31 @@
       font-weight: 700;
     }
 
-    /* بطاقات الثغرات الدستورية */
-    .loophole-card {
+    /* البنود والوقائع */
+    .article-clause {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 14px;
-      padding: 24px 26px;
-      margin-bottom: 22px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-      transition: all 0.25s ease;
     }
 
-    .loophole-card:hover {
-      border-color: var(--accent-gold);
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .card-header h3 {
-      font-size: 17px;
+    .article-clause h4 {
+      font-size: 16px;
       font-weight: 700;
       color: var(--primary-light);
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .badge-tag {
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
-
-    .badge-gold {
-      background: #fef9c3;
-      color: #854d0e;
-      border: 1px solid #fef08a;
-    }
-
-    .badge-danger {
-      background: #fee2e2;
-      color: #991b1b;
-      border: 1px solid #fecaca;
-    }
-
-    .badge-blue {
-      background: #e0f2fe;
-      color: #0369a1;
-      border: 1px solid #bae6fd;
+    .article-clause p {
+      font-size: 14.5px;
+      color: #334155;
+      margin-bottom: 10px;
+      line-height: 1.85;
     }
 
     .quote-box {
@@ -301,112 +292,141 @@
       line-height: 1.85;
     }
 
-    .analysis-box {
-      background: #fefefe;
+    /* صندوق الأدلة المرئية والصوتية */
+    .evidence-section {
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
-      padding: 14px 18px;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 13.5px;
-      color: #334155;
-      line-height: 1.85;
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 30px;
     }
 
-    .fix-box {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      padding: 12px 18px;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 13.5px;
-      color: #166534;
-      line-height: 1.85;
-    }
-
-    .fix-box strong {
-      color: #14532d;
-    }
-
-    /* صناديق الخطاب والمرافعة */
-    .speech-box {
+    .evidence-item {
       background: #ffffff;
-      border: 2px solid var(--accent-gold);
-      border-radius: 14px;
-      padding: 24px 26px;
-      margin-bottom: 24px;
-      position: relative;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
 
-    .speech-title {
+    .evidence-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .ev-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
     }
 
-    .speech-title h4 {
+    .ev-title {
       font-size: 16px;
       font-weight: 700;
       color: var(--primary);
     }
 
-    .speech-text {
-      background: #fdfaf3;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 22px 26px;
-      border-radius: 10px;
+    .ev-badge {
+      font-size: 12px;
+      font-weight: 700;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    .ev-desc {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+
+    .evidence-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    /* صندوق الطلبات والعقوبات */
+    .demands-box {
+      background: linear-gradient(135deg, #0f1923 0%, #1a2938 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 35px;
+      border: 1px solid var(--accent-red);
+    }
+
+    .demands-box h3 {
+      font-size: 19px;
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .demands-box ul {
+      margin-right: 24px;
       font-size: 15px;
       line-height: 2;
-      color: #1e293b;
-      position: relative;
     }
 
-    .speech-text p {
-      margin-bottom: 14px;
+    .demands-box li {
+      margin-bottom: 10px;
     }
 
-    .speech-text p:last-child {
-      margin-bottom: 0;
+    .demands-box strong {
+      color: var(--accent-gold-light);
     }
 
-    .copy-btn-inline {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: var(--accent-gold);
-      color: #0b131b;
-      border: 1px solid var(--accent-gold-dark);
-      padding: 6px 16px;
-      border-radius: 6px;
-      font-size: 12px;
-      cursor: pointer;
-      font-weight: 700;
-      font-family: 'Cairo', sans-serif;
-      transition: all 0.2s ease;
-    }
-
-    .copy-btn-inline:hover {
-      background: var(--accent-gold-light);
-    }
-
-    /* خاتمة الوثيقة */
-    .footer-stamp {
+    /* التوقيعات والأختام */
+    .signatures {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
       margin-top: 45px;
       padding-top: 25px;
       border-top: 2px dashed #cbd5e1;
     }
 
-    .official-badge {
-      border: 2px solid var(--accent-gold);
-      color: var(--accent-gold-dark);
-      padding: 8px 18px;
+    .sign-col p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .sign-name {
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .official-stamp {
+      border: 2px solid var(--accent-red);
+      color: var(--accent-red);
+      padding: 10px 22px;
       border-radius: 8px;
       font-size: 12px;
       font-weight: 800;
-      background: #fefce8;
+      text-align: center;
+      line-height: 1.6;
+      transform: rotate(-2deg);
     }
 
     /* تنسيقات الطباعة */
@@ -415,7 +435,7 @@
         background: #fff;
         padding: 0;
       }
-      .toolbar, .copy-btn-inline {
+      .toolbar {
         display: none !important;
       }
       .document-page {
@@ -432,212 +452,192 @@
   <!-- شريط الأدوات العلوي -->
   <div class="toolbar">
     <div class="toolbar-info">
-      <h3>🏛️ تقرير التدقيق الدستوري والمكافأة التشريعية</h3>
-      <p>مقدم إلى إدارة وهيئة قضاء سيرفر GC الرسمي</p>
+      <h3>⚖️ صحيفة ادعاء ودعوى جنائية وتأديبية كبرى</h3>
+      <p>هيئة القضاء العليا وإدارة سيرفر GC الرسمي — القضية رقم GC-CRIM-2026-002</p>
     </div>
     <div class="btn-group">
-      <button class="btn btn-gold" onclick="window.print()">🖨️ طباعة / حفظ بصيغة PDF</button>
-      <button class="btn" onclick="copyFullGuide()">📋 نسخ التقرير كاملاً</button>
+      <button class="btn btn-red" onclick="window.print()">🖨️ طباعة / حفظ بصيغة PDF</button>
+      <button class="btn" onclick="copyDocumentText()">📋 نسخ صحيفة الدعوى كاملاً</button>
     </div>
   </div>
 
-  <div class="document-page" id="guideDoc">
+  <div class="document-page" id="lawsuitDoc">
+
+    <div class="classification-ribbon">
+      🔴 بلاغ ودعوى جنائية عاجلة — انتهاك حرمة الأسرة والتحرش واستخدام الذكاء الاصطناعي والتهديد 🔴
+    </div>
 
     <div class="doc-header">
       <div class="header-info">
-        <h1>تقرير التدقيق الدستوري الشامل وملف الثغرات</h1>
-        <p>مراجعة تشريعية متخصصة لكشف الثغرات الدستورية وتقديم مقترحات سدها مع طلب المكافأة التقديرية</p>
+        <h1>صحيفة ادعاء ودعوى جنائية وتأديبية رسمية</h1>
+        <p>مقدمة أمام هيئة القضاء العليا وإدارة سيرفر GC الموقرة</p>
       </div>
-      <div class="emblem">🎖️</div>
+      <div class="emblem">⚖️</div>
     </div>
 
     <!-- شبكة البيانات التوثيقية -->
-    <div class="meta-grid">
-      <div><strong>الجهة الموجه إليها:</strong> إدارة سيرفر GC الموقرة • هيئة القضاء العليا • المالك (الأونر)</div>
-      <div><strong>مقدم التقرير:</strong> العضو كريم — بصفته مدققاً ومساهماً في سلامة لوائح السيرفر</div>
-      <div><strong>تاريخ التقديم:</strong> 13 أكتوبر 2026 (تقديم فوري مباشر)</div>
-      <div><strong>تصنيف الوثيقة:</strong> تقرير تدقيق قانوني وإصلاح دستوري وقائي</div>
+    <div class="meta-box">
+      <div><strong>رقم القضية:</strong> Case GC-CRIM-2026-002</div>
+      <div><strong>تاريخ التقديم:</strong> 13 أكتوبر 2026</div>
+      <div><strong>المدعي (المجني عليه):</strong> العضو / كريم (Karim)</div>
+      <div><strong>حالة الدعوى:</strong> <span class="badge-status">دعوى جنائية كبرى عاجلة</span></div>
+      <div><strong>المتهم:</strong> العضو / مصطفى إيهاب (حساب: Moustafa_E)</div>
+      <div><strong>المرجع الدستوري:</strong> مادة صور الذكاء الاصطناعي ومبدأ الوقائع والمادة (4)</div>
     </div>
 
-    <!-- بطاقة طلب المكافأة الرسمية -->
-    <div class="reward-banner">
-      <h3>🎁 المقصد من التقرير والمكافأة الملتمسة:</h3>
-      <p>
-        حرصاً على سلامة مجتمع السيرفر وحمايته من أي فجوات قانونية قد يستغلها المخالفون للإفلات من العقاب أو ترويج محتويات محظورة، يضع العضو كريم هذا التدقيق الدستوري بين يدي الإدارة كجهد تشريعي تطوعي، مع التماس المكافأة التقديرية المستحقة تقديراً لهذا الجهد:
-      </p>
-      <ul>
-        <li><strong>أولاً:</strong> الإلغاء الفوري لكافة التدابير والقرارات التأديبية السابقة بحق العضو كريم، وإعادة كامل صلاحيات لوحة الصوت (الساوند بورد) ورفع المقاطع (الكليبات).</li>
-        <li><strong>ثانياً:</strong> منح العضو كريم رتبة تشجيعية وتكريمية (مثل: مستشار قانوني / مدقق دستوري) نظير كشفه لهذه الثغرات وتقديم حلول سدها.</li>
+    <!-- بطاقة المتهم والتهم الموجهة -->
+    <div class="accused-card">
+      <div class="accused-card-header">
+        <h3>بيان التهم المنسوبة إلى المتهم (مصطفى إيهاب):</h3>
+        <span class="badge-status">جرائم من الدرجة الأولى</span>
+      </div>
+      <ul class="charges-list">
+        <li>1. التحرش اللفظي ونشر محتوى ذي إيحاءات شاذة وإهانة علنية في القنوات العامة.</li>
+        <li>2. مخالفة المادة الدستورية الصريحة بحظر فبركة ونشر صور الأعضاء بواسطة الذكاء الاصطناعي (AI).</li>
+        <li>3. انتهاك حرمة الحياة الخاصة واستغلال صور أفراد عائلة المدعي وأطفال رُضَّع وقُصَّر وفبركتها دون إذن.</li>
+        <li>4. التهديد الصريح والابتزاز الموثق بالصوت لمنع المدعي من اللجوء للعدالة وسلب حقه الدستوري في الشكوى.</li>
       </ul>
     </div>
 
-    <!-- الجزء الأول: خطاب التقديم وطلب المكافأة -->
+    <!-- الوقائع التفصيلية -->
     <div class="section-title">
-      <span class="num-badge">المبحث الأول</span>
-      نص الخطاب الرسمي لتقديم التقرير وطلب المكافأة (جاهز للنسخ والإرسال اليوم)
+      <span class="num-badge">أولاً</span>
+      سرد الوقائع وملابسات الجريمة
     </div>
 
-    <div class="speech-box">
-      <div class="speech-title">
-        <h4>📢 الخطاب الموجه لإدارة السيرفر وهيئة القضاء والأونر:</h4>
-        <span class="badge-tag badge-gold">خطاب رسمي فصيح</span>
-      </div>
-      <div class="speech-text" id="rewardSpeech">
-        <button class="copy-btn-inline" onclick="copyText('rewardSpeech')">نسخ الخطاب</button>
-        <p>«إلى إدارة سيرفر GC الموقرة، وهيئة القضاء العليا، والأونر الكريم،، تحية طيبة ملؤها التقدير والاحترام وبعد:»</p>
-        <p>«انطلاقاً من حرصي الصادق على رفعة هذا السيرفر واستقراره، ورغبةً مني في المساهمة البناءة والإيجابية في حماية بيئتنا الرقمية، فقد قمت بعمل دراسة وتدقيق قانوني شامل لنصوص "دستور سيرفر GC" (في نسختيه العربية والإنجليزية).»</p>
-        <p>«وقد أسفر هذا التدقيق عن اكتشاف <strong>(6) ثغرات دستورية وتشريعية جوهرية وحساسة للغاية</strong>؛ من بينها ثغرة كارثية تُشرعن تداول الصور العارية الحقيقية بنص صريح، وأخرى تمنح حصانة مطلقة من العقوبات، وثغرات إجرائية تُبطل قرارات الإدارة أمام أي طعن.»</p>
-        <p>«وحيث إنني أضع هذا الملف الشامل بين أيديكم اليوم لخدمة السيرفر وحمايته وتعديل لوائحه قبل أن يستغلها أحد، فإنني ألتمس من كرم الإدارة وعدالتها تقديراً لهذا الجهد التشريعي من خلال:»</p>
-        <p>«1. رفع أي إيقاف مفروض على حسابي، وإعادة كامل صلاحياتي في لوحة الصوت (الساوند بورد) ورفع المقاطع، وطي أي خلافات سابقة بشكل نهائي اليوم.»</p>
-        <p>«2. التفضل بمنحي مكافأة تقديرية ورتبة تشجيعية تليق بهذا الإسهام في حماية دستور السيرفر.»</p>
-        <p>«شاكراً ومقدراً لكم سعة صدركم وحرصكم الدائم على العدالة والتطوير،، مقدمه: العضو كريم.»</p>
-      </div>
+    <div class="article-clause">
+      <h4>1. واقعة التحرش اللفظي والإيحاءات الشاذة العلنية:</h4>
+      <p>
+        أقدم المتهم "مصطفى إيهاب" على نشر صورة مفبركة ومركبة علناً داخل ديسكورد (الساعة 10:06 مساءً) تُظهر رجلين يقبلان بعضهما في حديقة عامة، مُرفقاً معها رموز قلوب وعبارة <strong>"اخويا ياعم"</strong>؛ وهو سلوك يمثل تحرشاً لفظياً صريحاً، وتنبيهاً لإيحاءات شاذة مرفوضة شرعاً وعرفاً، قاصداً بذلك التشهير بالمدعي والحط من كرامته أمام مجتمع السيرفر.
+      </p>
     </div>
 
-    <!-- الجزء الثاني: تفاصيل الثغرات الدستورية والحلول المقترحة -->
+    <div class="article-clause">
+      <h4>2. واقعة التعدي على خصوصية الأسرة واستخدام الذكاء الاصطناعي:</h4>
+      <p>
+        تجاوز المتهم كافة الخطوط الحمراء الأخلاقية بقيامه بتركيب وتوليد صورة مفبركة بالذكاء الاصطناعي لعائلة المدعي تضم زوجة وأطفالاً رُضَّعاً وقُصَّر، ملصقاً وجه المدعي عليها؛ وهو ما يشكل انتهاكاً صارخاً لحرمة المنازل والحياة الأسرية الخاصة وتداول محتويات غير مرخصة تمس الأعراض والأطفال.
+      </p>
+    </div>
+
+    <div class="article-clause">
+      <h4>3. واقعة التهديد الصريح لتعطيل حق التقاضي (Witness / Victim Intimidation):</h4>
+      <p>
+        عقب شروع المدعي في اتخاذ الإجراءات التأديبية المشروعة، بادر المتهم بإرسال رسائل صوتية واضحة ومسجلة (مرفقة بالدعوى) تتضمن تهديداً صريحاً للمدعي بالانتقام وتصعيد التشهير في حال قيامه برفع أي قضية ثانية ضده؛ وهي محاولة إجرامية لترهيب المجني عليه وسلب حقه الدستوري في الشكوى المنصوص عليه في المادة الرابعة.
+      </p>
+    </div>
+
+    <!-- صندوق الأدلة والمستندات -->
     <div class="section-title">
-      <span class="num-badge">المبحث الثاني</span>
-      الملف الفني للثغرات الدستورية الست مع التوصيات التشريعية لإصلاحها
+      <span class="num-badge">ثانياً</span>
+      الأدلة والمستندات المادية القاطعة المرفقة
     </div>
 
-    <!-- الثغرة 1 -->
-    <div class="loophole-card">
-      <div class="card-header">
-        <h3>1. الثغرة الفاضحة: تشريع تداول الصور العارية الحقيقية بنص الدستور</h3>
-        <span class="badge-tag badge-danger">خلل تشريعي حرج للغاية</span>
+    <div class="evidence-section">
+
+      <!-- الدليل الأول: سكرين شوت التحرش من ديسكورد -->
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-title">📷 الدليل الصوري رقم (1): سكرين شوت التحرش اللفظي من ديسكورد (روم #chats)</span>
+          <span class="ev-badge">توثيق رسمي بالدقيقة (الساعة 10:06 م)</span>
+        </div>
+        <div class="ev-desc">
+          لقطة شاشة كاملة وموثقة من داخل سيرفر GC تثبت قيام حساب المتهم الرسمي <strong>(Moustafa_E)</strong> بنشر الصورة ذات الإيحاءات الشاذة والتعدي اللفظي المباشر وعبارة "اخويا ياعم":
+        </div>
+        <img src="evidence_discord_1.png" alt="دليل التحرش اللفظي من ديسكورد روم الشات" class="evidence-image">
       </div>
+
+      <!-- الدليل الثاني: سكرين شوت نشر صورة العائلة المفبركة -->
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-title">👨‍👩‍👧‍👦 الدليل الصوري رقم (2): سكرين شوت نشر صورة العائلة بالذكاء الاصطناعي في ديسكورد</span>
+          <span class="ev-badge">توثيق رسمي بالدقيقة (الساعة 10:25 م)</span>
+        </div>
+        <div class="ev-desc">
+          لقطة شاشة كاملة وموثقة من داخل سيرفر GC (روم #chats) تثبت قيام المتهم <strong>(Moustafa_E)</strong> بنشر الصورة المفبركة بالذكاء الاصطناعي التي تنتهك حرمة أسرة المدعي وأطفاله القُصَّر علناً:
+        </div>
+        <img src="evidence_discord_2.png" alt="سكرين شوت نشر صورة العائلة في ديسكورد" class="evidence-image">
+      </div>
+
+      <!-- الدليل الثالث: التسجيل الصوتي للتهديد -->
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-title">🎧 الدليل الصوتي رقم (3): تسجيل صوتي يثبت التهديد والابتزاز الصريح</span>
+          <span class="ev-badge">تسجيل صوتي مادي مباشر</span>
+        </div>
+        <div class="ev-desc">
+          تسجيل صوتي للمتهم يهدد فيه المدعي صراحة في حال رفعه لأي قضية ثانية أمامه أمام القضاء، ومحاولة إرهابه لتعطيل العدالة:
+        </div>
+        <audio controls preload="metadata">
+          <source src="evidence_threat.mp3" type="audio/mpeg">
+          المتصفح لا يدعم تشغيل هذا الملف الصوتي.
+        </audio>
+      </div>
+
+    </div>
+
+    <!-- الأساس الدستوري والقانوني -->
+    <div class="section-title">
+      <span class="num-badge">ثالثاً</span>
+      الأساس الدستوري والقانوني للإدانة
+    </div>
+
+    <div class="article-clause">
+      <h4>1. المادة الدستورية الصريحة بحظر صور الذكاء الاصطناعي:</h4>
       <div class="quote-box">
-        <strong>النص الحرفي الوارد في الدستور (السطر 54):</strong><br>
-        «يُحظر على أي عضو إنشاء أو نشر أو توزيع أي صور عارية مولدة بالذكاء الاصطناعي...<br>
-        <strong>غير أنه إذا كانت هذه الصور العارية حقيقية، فإنه يُرخص باستخدامها وإرسالها داخل السيرفر!</strong>»
+        «No member shall create, publish, share, distribute, or otherwise circulate any AI-generated nude image depicting a GC server member... Any violation of this Article shall result in disciplinary action in accordance with the GC Constitution.»
       </div>
-      <div class="analysis-box">
-        <strong>الخلل والمخاطر:</strong> واضع النص أراد استثناء الصور الحقيقية من نطاق الذكاء الاصطناعي، ولكنه أورد صياغة أباحت صراحة نشر واستخدام الصور العارية الحقيقية لأعضاء السيرفر! إذا أقدم أي عضو على نشر صور عارية حقيقية، فإنه يمتلك غطاءً دستورياً يمنع معاقبته بنص دستوره الصريح!
-      </div>
-      <div class="fix-box">
-        <strong>التوصية التشريعية للإدارة:</strong> حذف السطر الأخير فوراً، وتعديل المادة لتنص على: «يُحظر حظراً تاماً نشر أو تداول أي صور عارية داخل السيرفر، سواء كانت حقيقية أو مولدة بالذكاء الاصطناعي، تحت طائلة الحظر النهائي المباشر.»
-      </div>
+      <p>خالف المتهم هذا الحظر الدستوري القاطع بتوليد ونشر صور مفبركة بالذكاء الاصطناعي تمس الأعضاء وعائلاتهم، وهو ما يوجب تطبيق الجزاء التأديبي المنصوص عليه.</p>
     </div>
 
-    <!-- الثغرة 2 -->
-    <div class="loophole-card">
-      <div class="card-header">
-        <h3>2. الثغرة الجوهرية: مبدأ الحكم بالوقائع المادية ونفي النوايا المفترضة</h3>
-        <span class="badge-tag badge-gold">بطلان القرارات القائمة على الظن</span>
-      </div>
+    <div class="article-clause">
+      <h4>2. إعمال "مبدأ الحكم بالوقائع المادية" (Principle of Factual Judgment):</h4>
       <div class="quote-box">
-        <strong>النص الدستوري المعتمد:</strong><br>
-        «يجب أن تُبنى القرارات والعقوبات حصراً على ما حدث فعلياً، والوقائع الثابتة، والأدلة المتاحة، لا على النوايا المفترضة أو التفسيرات الشخصية. وتُقاس المخالفات بالأفعال المادية التي وقعت في الواقع، لا بما يُفترض أن الشخص كان ينوي القيام به.»
+        «يجب أن تُبنى القرارات والعقوبات حصراً على ما حدث فعلياً، والوقائع الثابتة، والأدلة المتاحة، لا على النوايا المفترضة أو التفسيرات الشخصية.»
       </div>
-      <div class="analysis-box">
-        <strong>الخلل والمخاطر:</strong> هذا المبدأ يجعل أي قرار تأديبي تصدره الإدارة بناءً على تقدير "سوء نية" أو "قصد تحقيق مصلحة شخصية" باطلاً وقابلاً للنقض فوراً؛ ما لم تقدم الإدارة إثباتاً مادياً قاطعاً على الفعل المادي والضرر الحقيقي، وهو ما يعطل يد الإدارة في محاسبة التلاعب الخفي.
-      </div>
-      <div class="fix-box">
-        <strong>التوصية التشريعية للإدارة:</strong> إعادة صياغة المبدأ ليمنح القضاة سلطة تقديرية في استنباط القرائن والدلائل القوية، بدلاً من حصر الأحكام في الدليل المادي الصرف.
-      </div>
+      <p>الأدلة المقدمة في هذه الدعوى قطعية ومادية ملموسة (تسجيل صوتي قائم + سكرين شوت من حساب المتهم + صور مفبركة)، ولا تدع مجالاً للشك أو التخمين، مما يوجب الإدانة الفورية للمتهم.</p>
     </div>
 
-    <!-- الثغرة 3 -->
-    <div class="loophole-card">
-      <div class="card-header">
-        <h3>3. ثغرة حصر العقوبات: غياب النص على عقوبة "حظر المقاطع والكليبات"</h3>
-        <span class="badge-tag badge-blue">مخالفة مبدأ شرعية الجزاءات</span>
-      </div>
-      <div class="quote-box">
-        <strong>النص الدستوري (المادة الأولى):</strong><br>
-        حصرت المادة الأولى عقوبة حذف لوحة الصوت في تدبيرين حصريين:<br>
-        1. الحرمان النهائي من تقديم أي لوحة صوت جديدة للقبول.<br>
-        2. إدراج لوحة صوت خاصة بالمخالف كعقوبة إضافية.
-      </div>
-      <div class="analysis-box">
-        <strong>الخلل والمخاطر:</strong> خلو الدستور من أي عقوبات تكميلية مثل حظر رفع المقاطع (الكليبات) أو الكتم المؤقت؛ مما يجعل قيام الإدارة بفرض حظر المقاطع على أي عضو بمثابة عقوبة غير دستورية لعدم وجود نص يسندها.
-      </div>
-      <div class="fix-box">
-        <strong>التوصية التشريعية للإدارة:</strong> إضافة بند صريح في المادة الأولى يمنح الإدارة حق فرض عقوبات تبعية متدرجة (تشمل حظر المقاطع أو تقييد الرتب) بحسب جسامة الفعل.
-      </div>
+    <div class="article-clause">
+      <h4>3. كفالة حق التقاضي وتجريم ترهيب المشتكين (المادة الرابعة):</h4>
+      <p>تكفل المادة الرابعة من الدستور حق كل عضو في اللجوء للقضاء لحل النزاعات، وتجريم أي محاولة لتهديد الشاكي أو ابتزازه لتعطيل مرفق العدالة.</p>
     </div>
 
-    <!-- الثغرة 4 -->
-    <div class="loophole-card">
-      <div class="card-header">
-        <h3>4. ثغرة غموض شرط "الترخيص المسبق" (المادة الأولى - بند 1)</h3>
-        <span class="badge-tag badge-gold">فراغ إداري في الصلاحيات</span>
-      </div>
-      <div class="quote-box">
-        <strong>النص الدستوري:</strong> «يُمنع على أي عضو حذف أي ساوند بورد دون تصريح.»
-      </div>
-      <div class="analysis-box">
-        <strong>الخلل والمخاطر:</strong> لم يحدد الدستور من هي الجهة المختصة بمنح التصريح؛ فهل هو المالك، أم المشرف، أم صاحب الصوت نفسه؟ وفي ظل منح العضو صلاحية تقنية عبر رتبته في ديسكورد، يُعد ذلك إذناً ضمنياً يسقط عنه صفة المخالفة.
-      </div>
-      <div class="fix-box">
-        <strong>التوصية التشريعية للإدارة:</strong> توضيح النص ليصبح: «دون تصريح كتابي مسبق ومعتمد من إدارة السيرفر العليا في تذكرة رسمية.»
-      </div>
+    <!-- الطلبات الختامية -->
+    <div class="demands-box">
+      <h3>🏛️ رابعاً: الطلبات والعقوبات التأديبية الملتمسة</h3>
+      <p>يلتمس المدعي (كريم) من هيئة القضاء العليا وإدارة سيرفر GC الموقرة الحكم بالآتي:</p>
+      <ul>
+        <li><strong>أولاً:</strong> قبول صحيفة الادعاء شكلاً لاستيفائها كافة الأركان القانونية والأدلة المادية.</li>
+        <li><strong>ثانياً:</strong> إدانة المتهم <strong>"مصطفى إيهاب"</strong> بجرائم التحرش اللفظي، وفبركة صور الذكاء الاصطناعي، والمساس بحرمة الأسرة، والتهديد الجنائي الصريح.</li>
+        <li><strong>ثالثاً:</strong> توقيع أقصى عقوبة تأديبية مقررة، بتطبيق عقوبة <strong>الحظر النهائي المباشر (Permanent Ban)</strong> على المتهم لخطورة سلوكه وتعديه على الأخلاق العامة.</li>
+        <li><strong>رابعاً:</strong> إلزام المتهم بالحذف الفوري والشامل لكافة الصور والتسجيلات المسيئة من جميع الأجهزة والخوادم.</li>
+        <li><strong>خامساً:</strong> إلزام المتهم بتقديم اعتذار رسمي وعلني للمدعي وعائلته في القناة العامة للسيرفر.</li>
+      </ul>
     </div>
 
-    <!-- الثغرة 5 -->
-    <div class="loophole-card">
-      <div class="card-header">
-        <h3>5. درع الحصانة الشامل: بند الهزار والمزاح المعتاد (المادة السادسة)</h3>
-        <span class="badge-tag badge-blue">مهرب قانوني لأي متهم</span>
+    <!-- التوقيعات والأختام -->
+    <div class="signatures">
+      <div class="sign-col">
+        <p>مقدم الدعوى الجنائية</p>
+        <div class="sign-name">العضو / كريم (Karim)</div>
+        <p style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">عضو سيرفر GC — صاحب الصفة والمصلحة</p>
       </div>
-      <div class="quote-box">
-        <strong>النص الدستوري (المادة السادسة - بند 3):</strong><br>
-        «لا تُعد المزحات بين الأصدقاء، أو الهزار المعتاد، أو الاختلاف المحترم في الرأي، أو النقد بحسن نية مخالفات.»
-      </div>
-      <div class="analysis-box">
-        <strong>الخلل والمخاطر:</strong> هذا النص مطلق وفضفاض؛ ويتيح لأي عضو يرتكب مخالفات لفظية أو إهانات أو يروج لمصطلحات غير لائقة أن يدفع فوراً بأن ما قام به كان مجرد "هزار معتاد"، مما يسلب القضاة سلطة توقيع أي عقوبة رادعة.
-      </div>
-      <div class="fix-box">
-        <strong>التوصية التشريعية للإدارة:</strong> تقييد النص بإضافة: «شريطة ألا يتضمن الهزار مساساً بالأعراض أو تهديداً للنظام العام أو إساءة موجهة ترفضها الأعراف العامة.»
-      </div>
-    </div>
-
-    <!-- الثغرة 6 -->
-    <div class="loophole-card">
-      <div class="card-header">
-        <h3>6. ثغرة تعارض النسختين وبطلان التعديلات بغير إعلان رسمي</h3>
-        <span class="badge-tag badge-danger">ازدواجية وبطلان تشريعي</span>
-      </div>
-      <div class="quote-box">
-        <strong>الحكم الختامي:</strong> «ولا يجوز تعديل مواده إلا من خلال إعلان رسمي.»
-      </div>
-      <div class="analysis-box">
-        <strong>الخلل والمخاطر:</strong> النسخة الإنجليزية تحتوي على مواد إضافية خطيرة لا وجود لها في النسخة العربية المعتمدة. وهذا التناقض يبطل سريان التعديلات لعدم صدور إعلان رسمي بها، كما يفتح الباب للدفع ببطلان أي حكم قضائي قائم على نسختين متعارضتين.
-      </div>
-      <div class="fix-box">
-        <strong>التوصية التشريعية للإدارة:</strong> اعتماد نسخة رسمية موحدة ومطابقة ونشرها بإعلان رسمي في قناة الإعلانات العامة لضمان مشروعيتها الدستورية.
-      </div>
-    </div>
-
-    <!-- خاتمة الوثيقة والاعتماد -->
-    <div class="footer-stamp">
-      <div>
-        <p style="font-weight: 700; color: var(--primary);">وثيقة تدقيق دستوري وإصلاح تشريعي</p>
-        <p style="font-size: 12px; color: var(--text-muted);">مقدمة بجهد شخصي وتطوعي من العضو كريم — سيرفر GC</p>
-      </div>
-      <div class="official-badge">
-        🎖️ استحقاق المكافأة والتقدير الرسمي
+      <div class="official-stamp">
+        مستند قضائي جنائي رسمي<br>
+        سيرفر GC — هيئة القضاء العليا<br>
+        ⚖️ دعوى رقم: GC-CRIM-2026-002
       </div>
     </div>
 
   </div>
 
   <script>
-    function copyText(elementId) {
-      const el = document.getElementById(elementId);
-      navigator.clipboard.writeText(el.innerText).then(() => {
-        alert('تم نسخ الخطاب الرسمي بنجاح!');
-      }).catch(err => {
-        alert('تعذر نسخ الخطاب: ' + err);
-      });
-    }
-
-    function copyFullGuide() {
-      const doc = document.getElementById('guideDoc');
+    function copyDocumentText() {
+      const doc = document.getElementById('lawsuitDoc');
       navigator.clipboard.writeText(doc.innerText).then(() => {
-        alert('تم نسخ التقرير كاملاً بنجاح!');
+        alert('تم نسخ صحيفة الدعوى الجنائية بالكامل بنجاح!');
       }).catch(err => {
-        alert('تعذر نسخ التقرير: ' + err);
+        alert('حدث خطأ أثناء النسخ: ' + err);
       });
     }
   </script>
