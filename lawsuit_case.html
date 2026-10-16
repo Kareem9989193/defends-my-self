@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صحيفة دعوى جنائية وتأديبية ضد مصطفى إيهاب | سيرفر GC</title>
+  <meta name="description" content="صحيفة ادعاء ودعوى جنائية وتأديبية رسمية ضد المتهم مصطفى إيهاب بتهمة التحرش اللفظي ونشر صور بالذكاء الاصطناعي وانتهاك خصوصية العائلة والتهديد">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f1923;
+      --primary-light: #1c2b3a;
+      --primary-dark: #090e14;
+      --accent-gold: #c29d59;
+      --accent-gold-light: #dfba78;
+      --accent-red: #c0392b;
+      --accent-red-soft: #fcf0ee;
+      --accent-blue: #2980b9;
+      --accent-blue-soft: #ebf5fb;
+      --text-main: #1a1a1a;
+      --text-muted: #5a6270;
+      --bg-page: #edf1f5;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', 'Amiri', Tahoma, sans-serif;
+      background: var(--bg-page);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(192, 57, 43, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(15, 25, 35, 0.06) 0%, transparent 40%);
+      color: var(--text-main);
+      line-height: 1.85;
+      padding: 25px 15px;
+      min-height: 100vh;
+    }
+
+    /* شريط الأدوات العلوي */
+    .toolbar {
+      max-width: 960px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      padding: 16px 26px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(15, 25, 35, 0.25);
+      border: 1px solid rgba(194, 157, 89, 0.3);
+    }
+
+    .toolbar-info h3 {
+      font-size: 16px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toolbar-info p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .btn-red {
+      background: linear-gradient(135deg, var(--accent-red) 0%, #962d22 100%);
+      color: #fff;
+      border-color: #e74c3c;
+      font-weight: 700;
+    }
+
+    .btn-red:hover {
+      background: #e74c3c;
+    }
+
+    /* صحيفة المستند الرئيسي */
+    .document-page {
+      max-width: 960px;
+      margin: 0 auto 40px auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 45px 42px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+    }
+
+    /* الشريط التصنيفي */
+    .classification-ribbon {
+      text-align: center;
+      background: var(--accent-red-soft);
+      color: var(--accent-red);
+      border: 1px dashed var(--accent-red);
+      font-size: 13px;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ترويسة الوثيقة */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 22px;
+      border-bottom: 3px double var(--border-color);
+      margin-bottom: 28px;
+    }
+
+    .header-info h1 {
+      font-family: 'Amiri', 'Cairo', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .header-info p {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .emblem {
+      font-size: 40px;
+      line-height: 1;
+      padding: 12px 18px;
+      background: #fdfaf3;
+      border: 2px solid var(--accent-red);
+      border-radius: 14px;
+    }
+
+    /* شبكة البيانات الأساسية */
+    .meta-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-right: 5px solid var(--accent-red);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .meta-box div strong {
+      color: var(--primary);
+    }
+
+    .badge-status {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* بطاقة المتهم */
+    .accused-card {
+      background: #fffafa;
+      border: 1px solid #fecaca;
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 14px rgba(192, 57, 43, 0.05);
+    }
+
+    .accused-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .accused-card-header h3 {
+      font-size: 18px;
+      color: var(--accent-red);
+      font-weight: 800;
+    }
+
+    .charges-list {
+      margin-right: 22px;
+      margin-top: 10px;
+      font-size: 14.5px;
+      color: #7f1d1d;
+    }
+
+    .charges-list li {
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    /* عناوين الأقسام */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 38px 0 18px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .num-badge {
+      background: var(--primary);
+      color: var(--accent-gold);
+      padding: 2px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* البنود والوقائع */
+    .article-clause {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .article-clause h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .article-clause p {
+      font-size: 14.5px;
+      color: #334155;
+      margin-bottom: 10px;
+      line-height: 1.85;
+    }
+
+    .quote-box {
+      background: #f8fafc;
+      border-right: 4px solid var(--accent-gold);
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 14px;
+      color: #1e293b;
+      font-weight: 600;
+      line-height: 1.85;
+    }
+
+    /* صندوق الأدلة المرئية والصوتية */
+    .evidence-section {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 30px;
+    }
+
+    .evidence-item {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .evidence-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .ev-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .ev-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .ev-badge {
+      font-size: 12px;
+      font-weight: 700;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    .ev-desc {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+
+    .evidence-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    /* صندوق الطلبات والعقوبات */
+    .demands-box {
+      background: linear-gradient(135deg, #0f1923 0%, #1a2938 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-top: 35px;
+      border: 1px solid var(--accent-red);
+    }
+
+    .demands-box h3 {
+      font-size: 19px;
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .demands-box ul {
+      margin-right: 24px;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .demands-box li {
+      margin-bottom: 10px;
+    }
+
+    .demands-box strong {
+      color: var(--accent-gold-light);
+    }
+
+    /* التوقيعات والأختام */
+    .signatures {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 2px dashed #cbd5e1;
+    }
+
+    .sign-col p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .sign-name {
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .official-stamp {
+      border: 2px solid var(--accent-red);
+      color: var(--accent-red);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.6;
+      transform: rotate(-2deg);
+    }
+
+    /* تنسيقات الطباعة */
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .toolbar {
+        display: none !important;
+      }
+      .document-page {
+        box-shadow: none;
+        border: none;
+        padding: 10px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط الأدوات العلوي -->
+  <div class="toolbar">
+    <div class="toolbar-info">
+      <h3>⚖️ صحيفة ادعاء ودعوى جنائية وتأديبية كبرى</h3>
+      <p>هيئة القضاء العليا وإدارة سيرفر GC الرسمي — القضية رقم GC-CRIM-2026-002</p>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-red" onclick="window.print()">🖨️ طباعة / حفظ بصيغة PDF</button>
+      <button class="btn" onclick="copyDocumentText()">📋 نسخ صحيفة الدعوى كاملاً</button>
+    </div>
+  </div>
+
+  <div class="document-page" id="lawsuitDoc">
+
+    <div class="classification-ribbon">
+      🔴 بلاغ ودعوى جنائية عاجلة — انتهاك حرمة الأسرة والتحرش واستخدام الذكاء الاصطناعي والتهديد 🔴
+    </div>
+
+    <div class="doc-header">
+      <div class="header-info">
+        <h1>صحيفة ادعاء ودعوى جنائية وتأديبية رسمية</h1>
+        <p>مقدمة أمام هيئة القضاء العليا وإدارة سيرفر GC الموقرة</p>
+      </div>
+      <div class="emblem">⚖️</div>
+    </div>
+
+    <!-- شبكة البيانات التوثيقية -->
+    <div class="meta-box">
+      <div><strong>رقم القضية:</strong> Case GC-CRIM-2026-002</div>
+      <div><strong>تاريخ التقديم:</strong> 13 أكتوبر 2026</div>
+      <div><strong>المدعي (المجني عليه):</strong> العضو / كريم (Karim)</div>
+      <div><strong>حالة الدعوى:</strong> <span class="badge-status">دعوى جنائية كبرى عاجلة</span></div>
+      <div><strong>المتهم:</strong> العضو / مصطفى إيهاب (حساب: Moustafa_E)</div>
+      <div><strong>المرجع الدستوري:</strong> مادة صور الذكاء الاصطناعي ومبدأ الوقائع والمادة (4)</div>
+    </div>
+
+    <!-- بطاقة المتهم والتهم الموجهة -->
+    <div class="accused-card">
+      <div class="accused-card-header">
+        <h3>بيان التهم المنسوبة إلى المتهم (مصطفى إيهاب):</h3>
+        <span class="badge-status">جرائم من الدرجة الأولى</span>
+      </div>
+      <ul class="charges-list">
+        <li>1. التحرش اللفظي ونشر محتوى ذي إيحاءات شاذة وإهانة علنية في القنوات العامة.</li>
+        <li>2. مخالفة المادة الدستورية الصريحة بحظر فبركة ونشر صور الأعضاء بواسطة الذكاء الاصطناعي (AI).</li>
+        <li>3. انتهاك حرمة الحياة الخاصة واستغلال صور أفراد عائلة المدعي وأطفال رُضَّع وقُصَّر وفبركتها دون إذن.</li>
+        <li>4. التهديد الصريح والابتزاز الموثق بالصوت لمنع المدعي من اللجوء للعدالة وسلب حقه الدستوري في الشكوى.</li>
+      </ul>
+    </div>
+
+    <!-- الوقائع التفصيلية -->
+    <div class="section-title">
+      <span class="num-badge">أولاً</span>
+      سرد الوقائع وملابسات الجريمة
+    </div>
+
+    <div class="article-clause">
+      <h4>1. واقعة التحرش اللفظي والإيحاءات الشاذة العلنية:</h4>
+      <p>
+        أقدم المتهم "مصطفى إيهاب" على نشر صورة مفبركة ومركبة علناً داخل ديسكورد (الساعة 10:06 مساءً) تُظهر رجلين يقبلان بعضهما في حديقة عامة، مُرفقاً معها رموز قلوب وعبارة <strong>"اخويا ياعم"</strong>؛ وهو سلوك يمثل تحرشاً لفظياً صريحاً، وتنبيهاً لإيحاءات شاذة مرفوضة شرعاً وعرفاً، قاصداً بذلك التشهير بالمدعي والحط من كرامته أمام مجتمع السيرفر.
+      </p>
+    </div>
+
+    <div class="article-clause">
+      <h4>2. واقعة التعدي على خصوصية الأسرة واستخدام الذكاء الاصطناعي:</h4>
+      <p>
+        تجاوز المتهم كافة الخطوط الحمراء الأخلاقية بقيامه بتركيب وتوليد صورة مفبركة بالذكاء الاصطناعي لعائلة المدعي تضم زوجة وأطفالاً رُضَّعاً وقُصَّر، ملصقاً وجه المدعي عليها؛ وهو ما يشكل انتهاكاً صارخاً لحرمة المنازل والحياة الأسرية الخاصة وتداول محتويات غير مرخصة تمس الأعراض والأطفال.
+      </p>
+    </div>
+
+    <div class="article-clause">
+      <h4>3. واقعة التهديد الصريح لتعطيل حق التقاضي (Witness / Victim Intimidation):</h4>
+      <p>
+        عقب شروع المدعي في اتخاذ الإجراءات التأديبية المشروعة، بادر المتهم بإرسال رسائل صوتية واضحة ومسجلة (مرفقة بالدعوى) تتضمن تهديداً صريحاً للمدعي بالانتقام وتصعيد التشهير في حال قيامه برفع أي قضية ثانية ضده؛ وهي محاولة إجرامية لترهيب المجني عليه وسلب حقه الدستوري في الشكوى المنصوص عليه في المادة الرابعة.
+      </p>
+    </div>
+
+    <!-- صندوق الأدلة والمستندات -->
+    <div class="section-title">
+      <span class="num-badge">ثانياً</span>
+      الأدلة والمستندات المادية القاطعة المرفقة
+    </div>
+
+    <div class="evidence-section">
+
+      <!-- الدليل الأول: سكرين شوت التحرش من ديسكورد -->
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-title">📷 الدليل الصوري رقم (1): سكرين شوت التحرش اللفظي من ديسكورد (روم #chats)</span>
+          <span class="ev-badge">توثيق رسمي بالدقيقة (الساعة 10:06 م)</span>
+        </div>
+        <div class="ev-desc">
+          لقطة شاشة كاملة وموثقة من داخل سيرفر GC تثبت قيام حساب المتهم الرسمي <strong>(Moustafa_E)</strong> بنشر الصورة ذات الإيحاءات الشاذة والتعدي اللفظي المباشر وعبارة "اخويا ياعم":
+        </div>
+        <img src="evidence_discord_1.png" alt="دليل التحرش اللفظي من ديسكورد روم الشات" class="evidence-image">
+      </div>
+
+      <!-- الدليل الثاني: سكرين شوت نشر صورة العائلة المفبركة -->
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-title">👨‍👩‍👧‍👦 الدليل الصوري رقم (2): سكرين شوت نشر صورة العائلة بالذكاء الاصطناعي في ديسكورد</span>
+          <span class="ev-badge">توثيق رسمي بالدقيقة (الساعة 10:25 م)</span>
+        </div>
+        <div class="ev-desc">
+          لقطة شاشة كاملة وموثقة من داخل سيرفر GC (روم #chats) تثبت قيام المتهم <strong>(Moustafa_E)</strong> بنشر الصورة المفبركة بالذكاء الاصطناعي التي تنتهك حرمة أسرة المدعي وأطفاله القُصَّر علناً:
+        </div>
+        <img src="evidence_discord_2.png" alt="سكرين شوت نشر صورة العائلة في ديسكورد" class="evidence-image">
+      </div>
+
+      <!-- الدليل الثالث: التسجيل الصوتي للتهديد -->
+      <div class="evidence-item">
+        <div class="ev-header">
+          <span class="ev-title">🎧 الدليل الصوتي رقم (3): تسجيل صوتي يثبت التهديد والابتزاز الصريح</span>
+          <span class="ev-badge">تسجيل صوتي مادي مباشر</span>
+        </div>
+        <div class="ev-desc">
+          تسجيل صوتي للمتهم يهدد فيه المدعي صراحة في حال رفعه لأي قضية ثانية أمامه أمام القضاء، ومحاولة إرهابه لتعطيل العدالة:
+        </div>
+        <audio controls preload="metadata">
+          <source src="evidence_threat.mp3" type="audio/mpeg">
+          المتصفح لا يدعم تشغيل هذا الملف الصوتي.
+        </audio>
+      </div>
+
+    </div>
+
+    <!-- الأساس الدستوري والقانوني -->
+    <div class="section-title">
+      <span class="num-badge">ثالثاً</span>
+      الأساس الدستوري والقانوني للإدانة
+    </div>
+
+    <div class="article-clause">
+      <h4>1. المادة الدستورية الصريحة بحظر صور الذكاء الاصطناعي:</h4>
+      <div class="quote-box">
+        «No member shall create, publish, share, distribute, or otherwise circulate any AI-generated nude image depicting a GC server member... Any violation of this Article shall result in disciplinary action in accordance with the GC Constitution.»
+      </div>
+      <p>خالف المتهم هذا الحظر الدستوري القاطع بتوليد ونشر صور مفبركة بالذكاء الاصطناعي تمس الأعضاء وعائلاتهم، وهو ما يوجب تطبيق الجزاء التأديبي المنصوص عليه.</p>
+    </div>
+
+    <div class="article-clause">
+      <h4>2. إعمال "مبدأ الحكم بالوقائع المادية" (Principle of Factual Judgment):</h4>
+      <div class="quote-box">
+        «يجب أن تُبنى القرارات والعقوبات حصراً على ما حدث فعلياً، والوقائع الثابتة، والأدلة المتاحة، لا على النوايا المفترضة أو التفسيرات الشخصية.»
+      </div>
+      <p>الأدلة المقدمة في هذه الدعوى قطعية ومادية ملموسة (تسجيل صوتي قائم + سكرين شوت من حساب المتهم + صور مفبركة)، ولا تدع مجالاً للشك أو التخمين، مما يوجب الإدانة الفورية للمتهم.</p>
+    </div>
+
+    <div class="article-clause">
+      <h4>3. كفالة حق التقاضي وتجريم ترهيب المشتكين (المادة الرابعة):</h4>
+      <p>تكفل المادة الرابعة من الدستور حق كل عضو في اللجوء للقضاء لحل النزاعات، وتجريم أي محاولة لتهديد الشاكي أو ابتزازه لتعطيل مرفق العدالة.</p>
+    </div>
+
+    <!-- الطلبات الختامية -->
+    <div class="demands-box">
+      <h3>🏛️ رابعاً: الطلبات والعقوبات التأديبية الملتمسة</h3>
+      <p>يلتمس المدعي (كريم) من هيئة القضاء العليا وإدارة سيرفر GC الموقرة الحكم بالآتي:</p>
+      <ul>
+        <li><strong>أولاً:</strong> قبول صحيفة الادعاء شكلاً لاستيفائها كافة الأركان القانونية والأدلة المادية.</li>
+        <li><strong>ثانياً:</strong> إدانة المتهم <strong>"مصطفى إيهاب"</strong> بجرائم التحرش اللفظي، وفبركة صور الذكاء الاصطناعي، والمساس بحرمة الأسرة، والتهديد الجنائي الصريح.</li>
+        <li><strong>ثالثاً:</strong> توقيع أقصى عقوبة تأديبية مقررة، بتطبيق عقوبة <strong>الحظر النهائي المباشر (Permanent Ban)</strong> على المتهم لخطورة سلوكه وتعديه على الأخلاق العامة.</li>
+        <li><strong>رابعاً:</strong> إلزام المتهم بالحذف الفوري والشامل لكافة الصور والتسجيلات المسيئة من جميع الأجهزة والخوادم.</li>
+        <li><strong>خامساً:</strong> إلزام المتهم بتقديم اعتذار رسمي وعلني للمدعي وعائلته في القناة العامة للسيرفر.</li>
+      </ul>
+    </div>
+
+    <!-- التوقيعات والأختام -->
+    <div class="signatures">
+      <div class="sign-col">
+        <p>مقدم الدعوى الجنائية</p>
+        <div class="sign-name">العضو / كريم (Karim)</div>
+        <p style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">عضو سيرفر GC — صاحب الصفة والمصلحة</p>
+      </div>
+      <div class="official-stamp">
+        مستند قضائي جنائي رسمي<br>
+        سيرفر GC — هيئة القضاء العليا<br>
+        ⚖️ دعوى رقم: GC-CRIM-2026-002
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function copyDocumentText() {
+      const doc = document.getElementById('lawsuitDoc');
+      navigator.clipboard.writeText(doc.innerText).then(() => {
+        alert('تم نسخ صحيفة الدعوى الجنائية بالكامل بنجاح!');
+      }).catch(err => {
+        alert('حدث خطأ أثناء النسخ: ' + err);
+      });
+    }
+  </script>
+
+</body>
+</html>
