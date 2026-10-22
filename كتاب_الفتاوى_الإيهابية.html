@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كتاب الفتاوى الإيهابية - للشيخ أحمد إيهاب</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-color: #0b110f;
+    --card-bg: #141d19;
+    --gold: #d4af37;
+    --gold-light: #f3e5ab;
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: #2b3933;
+  }
+  @media print {
+    body { background: #fff !important; color: #000 !important; }
+    .container { border: none !important; box-shadow: none !important; width: 100% !important; max-width: 100% !important; }
+    .print-btn { display: none !important; }
+    .fatwa-card { border-right: 3px solid #000 !important; background: #f8fafc !important; }
+    .fatwa-title, h1, h2, h3 { color: #000 !important; }
+    .fatwa-text { background: #f1f5f9 !important; color: #000 !important; }
+    .fatwa-explain { color: #334155 !important; }
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Amiri', serif;
+    margin: 0;
+    padding: 30px 15px;
+    line-height: 2;
+    font-size: 1.2rem;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    padding: 45px;
+    box-shadow: 0 10px 45px rgba(0,0,0,0.8), inset 0 0 40px rgba(212, 175, 55, 0.05);
+  }
+  .cover-wrapper {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .cover-img {
+    max-width: 380px;
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid var(--gold);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.85);
+    margin-bottom: 25px;
+  }
+  h1, h2, h3 {
+    font-family: 'Reem Kufi', sans-serif;
+    color: var(--gold);
+    text-align: center;
+  }
+  h1 { font-size: 2.6rem; margin: 10px 0 5px 0; }
+  .subtitle { font-size: 1.3rem; color: var(--gold-light); margin-bottom: 25px; }
+  h2 {
+    font-size: 1.85rem;
+    border-bottom: 2px dashed rgba(212, 175, 55, 0.4);
+    padding-bottom: 12px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+  .intro-box {
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 22px;
+    margin: 25px 0;
+    text-align: justify;
+  }
+  .fatwa-card {
+    background: rgba(0,0,0,0.3);
+    border-right: 5px solid var(--gold);
+    padding: 20px 25px;
+    margin: 24px 0;
+    border-radius: 4px 10px 10px 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  }
+  .fatwa-title {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.35rem;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+  }
+  .fatwa-text {
+    background: rgba(212, 175, 55, 0.12);
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+  .fatwa-explain {
+    color: #cbd5e1;
+    font-size: 1.15rem;
+  }
+  .evidence-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .evidence-item {
+    background: rgba(255,255,255,0.03);
+    margin: 12px 0;
+    padding: 14px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+  }
+  .evidence-item:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--gold);
+  }
+  .evidence-item a {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .print-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #997a15);
+    color: #0b110f;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.15rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: transform 0.2s;
+  }
+  .print-btn:hover {
+    transform: scale(1.04);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="cover-wrapper">
+    <img src="ihab_fatawa_cover.jpg" alt="غلاف الكتاب" class="cover-img">
+    <h1>كِتَابُ الفَتَاوَى الإِيهَابِيَّة</h1>
+    <div class="subtitle">فِي النَّوَازِلِ الدِّينِيَّةِ وَالأَحْكَامِ المَسْكُوبَة لِلشَّيْخِ أَحْمَد إِيهَاب</div>
+    <button class="print-btn" onclick="window.print()">🖨️ طباعة الكتاب أو حفظه كـ PDF</button>
+  </div>
+
+  <div class="intro-box">
+    <h3 style="margin-top: 0; color: var(--gold);">📜 مُقَدِّمَةُ التَّحْقِيقِ وَتَرْجَمَةُ الشَّيْخِ</h3>
+    بِسْمِ مَنْ لَا يُسْأَلُ عَمَّا يَفْعَلُ وَهُمْ يُسْأَلُونَ، أَمَّا بَعْدُ: فَهَذَا مُصَنَّفٌ فَرِيدٌ فِي بَابِهِ، بَدِيعٌ فِي اسْتِنْبَاطِهِ، جَمَعْنَا فِيهِ شَوَارِدَ الأَحْكَامِ وَنَوَادِرَ الفَتَاوَى الَّتِي صَدَرَتْ عَنْ صَاحِبِ المَنْهَجِ العَجِيبِ وَالبَاعِ الرَّحِيبِ، الشَّيْخِ <strong>أَحْمَد إِيهَاب</strong>، وَالَّتِي قَعَّدَ فِيهَا لِفِقْهِ "السِّيرْفَرَاتِ" وَقَوَانِينِ العَلَاقَاتِ وَنَوَازِلِ الدِّيسْكُورْدِ.
+  </div>
+
+  <h2>البَابُ الأَوَّلُ: الآدَابُ وَالأَلْفَاظُ وَالمُعَامَلَاتُ</h2>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">١. حُكْمُ نِدَاءِ الأَكْبَرِ سِنًّا بِاسْمِهِ المُجَرَّدِ</div>
+    <div class="fatwa-text">«حَرَامٌ أَنْ تُنَادِيَ مَنْ هُوَ أَكْبَرُ مِنْكَ بِاسْمِهِ؛ فَإِنَّ ذَلِكَ مِنَ العُقُوقِ وَالتَّطَاوُلِ عَلَى المَرَاتِبِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> اسْتَقَرَّ عِنْدَ الشَّيْخِ أَنَّ كُلَّ مَنْ سَبَقَكَ بِسَاعَةٍ أَوْ شَهْرٍ حَازَ مَقَامَ التَّبْجِيلِ الكَامِلِ، فَلَا يَجُوزُ إِسْقَاطُ اللَّقَبِ كَـ (يَا عَمُّ، يَا أُسْتَاذُ)، وَمَنْ تَجَرَّأَ فَنَادَى الكَبِيرَ حَافاً خَشِيَ عَلَيْهِ الشَّيْخُ مِنْ سُوءِ الأَدَبِ فِي رُومَاتِ الحِوَارِ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٢. فِي حُكْمِ التَّلَفُّظِ بِكَلِمَةِ "بَاشَا"</div>
+    <div class="fatwa-text">«مَنْ يَقُلْ كَلِمَةَ "بَاشَا" يَأْخُذْ ذُنُوباً وَآثَاماً».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> عَلَّلَ الشَّيْخُ ذَلِكَ بِأَنَّ لَفْظَ "البَاشَاوِيَّةِ" دَخِيلٌ عَلَى أَلْسِنَةِ أَهْلِ التَّقْوَى، فِيهِ شُبْهَةُ نَفْخِ الأَنَا وَالتَّمَلُّقِ المَذْمُومِ، فَرَأَى الشَّيْخُ تَغْلِيظَ العُقُوبَةِ لِقَاطِعِي السَّبِيلِ بِـ "حَبِيبِي يَا بَاشَا".</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٣. فِي كَرَاهِيَةِ قَوْلِ "آه" لِعِلَّةِ التَّشَبُّهِ</div>
+    <div class="fatwa-text">«حَرَامٌ عَلَى الرَّجُلِ أَنْ يَقُولَ "آه"؛ لِأَنَّ فِيهَا تَشَبُّهاً بِالنِّسَاءِ فِي الرِّقَّةِ وَالتَّأَوُّهِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> يَرَى المَفْهُومُ الإِيهَابِيُّ أَنَّ الرُّجُولَةَ تَسْتَوْجِبُ الكَظْمَ المُطْلَقَ، وَأَنَّ إِخْرَاجَ حَرْفِ المَدِّ مَعَ الهَاءِ فِيهِ لِينٌ لَا يَلِيقُ، وَعَلَيْهِ فَمَنْ أَصَابَهُ أَلَمٌ أَوْ دَهْشَةٌ فَعَلَيْهِ أَنْ يَصْمُتَ أَوْ يَتَجَلَّدَ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٤. فِي جَوَازِ الشَّتِيمَةِ وَالسِّبَابِ لِأَخْذِ الحَقِّ</div>
+    <div class="fatwa-text">«يَجُوزُ السِّبَابُ وَالشَّتِيمَةُ إِذَا كَانَتْ لِأَخْذِ الحَقِّ وَرَدِّ المَظَالِمِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> أَسَّسَ الشَّيْخُ فِي هَذَا البَابِ قَاعِدَةً شَخْصِيَّةً تُبِيحُ إِطْلَاقَ العَنَانِ لِلِسَانِ مَتَى مَا رَأَى المَرْءُ نَفْسَهُ مَظْلُوماً، فَاعْتَبَرَ الأَلْفَاظَ النَّابِيَةَ ضَرْباً مِنَ الدِّفَاعِ الشَّرْعِيِّ!</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٥. فِي تَرْكِ مُخَاطَبَةِ الأَبْكَمِ (الأَخْرَسِ)</div>
+    <div class="fatwa-text">«الأَخْرَسُ حَرَامٌ أَنْ نُكَلِّمَهُ؛ لِأَنَّهُ مُتَكَبِّرٌ لَا يَرُدُّ!».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> مِنْ أَعْجَبِ مَسَالِكِ التَّأْوِيلِ؛ حَيْثُ حَمَلَ سُكُوتَ فَاقِدِ النُّطْقِ عَلَى مَحْمَلِ التَّرَفُّعِ وَالكِبْرِيَاءِ عَنِ الإِجَابَةِ، فَأَفْتَى بِمُقَاطَعَتِهِ زَجْراً لَهُ عَنْ هَذَا التَّكَبُّرِ المُتَوَهَّمِ.</div>
+  </div>
+
+  <h2>البَابُ الثَّانِي: فِي الأَلْوَانِ وَالأَعْدَادِ وَالأَوْقَاتِ</h2>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٦. فِي حُرْمَةِ الأَرْقَامِ الفَرْدِيَّةِ</div>
+    <div class="fatwa-text">«الأَرْقَامُ الفَرْدِيَّةُ كُلُّهَا حَرَامٌ، وَلَا يُعْتَدُّ إِلَّا بِالأَشْفَاعِ الزَّوْجِيَّةِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> قَرَّرَ الشَّيْخُ فِي حِسَابِهِ الخَاصِّ بُغْضَ الوِتْرِ فِي الأُمُورِ المَادِيَّةِ، وَأَلْزَمَ كُلَّ مُعَامَلَةٍ أَنْ تَكُونَ زَوْجِيَّةً (٢، ٤، ٦...) نَافِياً المَشْرُوعِيَّةَ عَنِ الفَرْدِيِّ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٧. فِي لُبْسِ اللَّوْنِ الأَحْمَرِ بَعْدَ المَغْرِبِ</div>
+    <div class="fatwa-text">«حَرَامٌ لُبْسُ اللَّوْنِ الأَحْمَرِ عَقِبَ صَلَاةِ المَغْرِبِ مَهْمَا كَانَتِ الحَاجَةُ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> رَبَطَ الشَّيْخُ بَيْنَ حُمْرَةِ الشَّفَقِ الغَارِبِ وَبَيْنَ ثِيَابِ المَرْءِ، فَاعْتَبَرَ ارْتِدَاءَ الأَحْمَرِ فِي ظُلْمَةِ اللَّيْلِ مَجْلَبَةً لِلشَّيَاطِينِ وَمُنَافِياً لِلسَّكِينَةِ.</div>
+  </div>
+
+  <h2>البَابُ الثَّالِثُ: فِي الفَضَاءِ الإِلِكْتُرُونِيِّ (الدِّيسْكُورْدِ وَالتِّيكْ تُوكْ)</h2>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٨. فِي الصُّوَرِ بَيْنَ الدِّيسْكُورْدِ وَالتِّيكْ تُوكْ</div>
+    <div class="fatwa-text">«حَرَامٌ أَنْ تَضَعَ صُورَةً عَارِيَةً لَيْسَتْ لَكَ فِي مَجْمُوعَاتِ الدِّيسْكُورْدِ، أَمَّا التِّيكْ تُوكْ فَعَادِيٌّ لَا حَرَجَ فِيهِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> مَيَّزَ فِقْهُ الإِيهَابِيِّ بَيْنَ المَنَصَّاتِ تَمْيِيزاً رَقْمِيّاً؛ فَشَدَّدَ عَلَى رُوَّادِ الدِّيسْكُورْدِ بِاعْتِبَارِهِ مَجْلِساً خَاصّاً، وَتَسَاهَلَ مَعَ التِّيكْ تُوكْ لِشُيُوعِ البَلْوَى فِيهِ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">٩. فِي مُشَاهَدَةِ المُحَرَّمَاتِ بِدُونِ صَوْتٍ</div>
+    <div class="fatwa-text">«مُشَاهَدَةُ الأَفْلَامِ المُحَرَّمَةِ حَلَالٌ إِذَا كَانَتْ مَكْتُومَةَ الصَّوْتِ (Mute)».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> اسْتَنْبَطَ الشَّيْخُ أَنَّ جَوْهَرَ التَّحْرِيمِ يَقَعُ فِي الأَصْوَاتِ، فَإِذَا مَا جُرِّدَ المَقْطَعُ مِنْ أَوْتَارِهِ الصَّوْتِيَّةِ خَفَّتِ الجَرِيرَةُ وَصَارَتْ رُؤْيَةً صَامِتَةً لَا إِثْمَ فِيهَا حَسَبَ زَعْمِهِ!</div>
+  </div>
+
+  <h2>البَابُ الرَّابِعُ: الفَتَاوَى الشَّاذَّةُ وَالأَحْكَامُ الخَاصَّةُ</h2>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">١٠. فِي مُخَالَطَةِ النِّسَاءِ وَاللَّعِبِ مَعَهُنَّ</div>
+    <div class="fatwa-text">«اللَّعِبُ مَعَ البَنَاتِ حَلَالٌ جَائِزٌ، إِلَّا الزَّانِي وَالزَّانِيَة».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> فَتَحَ بَابَ المُسَامَرَةِ وَاللَّعِبِ مَعَ الجِنْسِ الآخَرِ فِي الأَلْعَابِ وَالشَّاتَاتِ، ثُمَّ اسْتَثْنَى اسْتِثْنَاءً ظَاهِرَ التَّنَاقُضِ يَقْصُرُ المَنْعَ عَلَى مَنْ وَقَعَ فِي الكَبِيرَةِ فَقَطْ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">١١. فِي ارْتِكَابِ المَحْظُورِ بِنِيَّةِ التَّعَلُّمِ</div>
+    <div class="fatwa-text">«الفَاحِشَةُ حَلَالٌ بِنِيَّةِ التَّعَلُّمِ وَكَسْبِ الخِبْرَةِ بَعْدَ بُلُوغِ الثَّامِنَةَ عَشْرَةَ عَاماً».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> انْحِرَافٌ صَرِيحٌ يَدَّعِي إِسْقَاطَ الأَحْكَامِ عَنِ الكَبَائِرِ تَحْتَ لَافِتَةِ "التَّعَلُّمِ وَالتَّجْرِبَةِ"، مُسْتَحْدِثاً رُخْصَةً تَرْتَبِطُ بِمُجَرَّدِ السِّنِّ القَانُونِيَّةِ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">١٢. فِي خُصُوصِيَّةِ اسْتِبَاحَةِ مَحْمُودٍ</div>
+    <div class="fatwa-text">«اسْتِبَاحَةُ مَحْمُودٍ وَالنَّيْلُ مِنْهُ حَلَالٌ دُونَ غَيْرِهِ مِنَ النَّاسِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> حَصَرَ الشَّيْخُ فِي هَذِهِ المَسْأَلَةِ اسْتِبَاحَةً فَرْدِيَّةً شَاذَّةً تُسْقِطُ الحُرُمَاتِ عَنْ شَخْصٍ بِعَيْنِهِ دُونَ سَائِرِ النَّاسِ تَبَعاً لِأَهْوَائِهِ الخَاصَّةِ.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">١٣. فِي غَسْلِ الدَّاخِلِ فِي الإِسْلَامِ</div>
+    <div class="fatwa-text">«أَكْثَرُ النَّاسِ حِفْظاً لِلْقُرْآنِ يَلْزَمُهُ أَنْ يُغَسِّلَ الكَافِرَ الدَّاخِلَ فِي الإِسْلَامِ بِيَدِهِ اليُمْنَى أَوَّلاً».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> شَرْطٌ غَرِيبٌ أَوْجَبَ فِيهِ عَلَى كِبَارِ الحَفَظَةِ مُهِمَّةَ التَّطْهِيرِ البَدَنِيِّ لِلْمُهْتَدِينَ الجُدُدِ بِمُبَاشَرَةِ اليَمِينِ دُونَ سِوَاهَا.</div>
+  </div>
+
+  <div class="fatwa-card">
+    <div class="fatwa-title">١٤. فِي صَلَاحِيَّةِ الشَّيْخِ فِي مُسَامَحَةِ نَفْسِهِ</div>
+    <div class="fatwa-text">«الشَّيْخُ يَمْلِكُ سُلْطَةً مُطْلَقَةً فِي مُسَامَحَةِ نَفْسِهِ وَإِسْقَاطِ تَبِعَاتِ خَطَايَاهُ عَنْ ذَاتِهِ».</div>
+    <div class="fatwa-explain"><strong>الشَّرْحُ وَالبَيَانُ:</strong> خَاتِمَةُ القَوَاعِدِ فِي مَذْهَبِهِ؛ إِذْ مَنَحَ نَفْسَهُ حَصَانَةً سُلْطَوِيَّةً تُخَوِّلُهُ ارْتِكَابَ التَّنَاقُضَاتِ، ثُمَّ الجُلُوسَ مَعَ نَفْسِهِ وَإِبْرَاءَ ذِمَّتِهِ بِذَاتِهِ دُونَ اعْتِذَارٍ أَوْ تَوْبَةٍ!</div>
+  </div>
+
+  <h2>المَلْحَقُ التَّوْثِيقِيُّ: أَدِلَّةُ الإِدَانَةِ وَالتَّسْجِيلَاتُ المَرْئِيَّةُ</h2>
+  <ul class="evidence-list">
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022191201_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء الأول (19:12:01)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022191358_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء الثاني (19:13:58)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022191639_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء الثالث (19:16:39)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022191847_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء الرابع (19:18:47)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022191935_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء الخامس (19:19:35)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022192302_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء السادس (19:23:02)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022192442_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء السابع (19:24:42)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022193806_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء الثامن (19:38:06)</a></li>
+    <li class="evidence-item">📹 <a href="file:///c:/Users/kk/defend/Screen Recording_20261022194730_ayyoubi__Untitled_Medal.mp4" target="_blank">تسجيل الواقعة المرئية - الجزء التاسع الختامي (19:47:30)</a></li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجموع فتاوى شيخ السيرفرات أحمد إيهاب - طبعة مطابقة لمجموع الفتاوى</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 20mm 15mm;
+  }
+
+  :root {
+    --text-color: #111827;
+    --paper-bg: #fffefb;
+    --border-color: #d1d5db;
+    --gold: #d4af37;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #232927;
+    margin: 0;
+    padding: 25px 10px 50px 10px;
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    color: var(--text-color);
+    line-height: 2.05;
+    font-size: 19.5px;
+  }
+
+  .book-viewport {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* Fixed Navigation Top Bar */
+  .web-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid var(--gold);
+    border-radius: 50px;
+    padding: 10px 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 15px;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+
+  .web-nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+
+  .web-nav a:hover {
+    color: var(--gold);
+  }
+
+  .print-btn {
+    background: linear-gradient(135deg, var(--gold), #997a15);
+    color: #000;
+    border: none;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+    transition: all 0.2s;
+  }
+
+  .print-btn:hover {
+    transform: scale(1.04);
+  }
+
+  .book-page {
+    background: var(--paper-bg);
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 55px 65px 65px 65px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    border: 1px solid #c8c5b9;
+    position: relative;
+    page-break-after: always;
+  }
+
+  .cover-page {
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .cover-page img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Title Page */
+  .title-page-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    min-height: 980px;
+  }
+
+  .thuluth-title {
+    font-family: 'Reem Kufi', 'Amiri', serif;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+
+  .author-title {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+  }
+
+  .author-duaa {
+    font-size: 22px;
+    color: #4b5563;
+    margin-bottom: 30px;
+  }
+
+  .compiler-box {
+    margin: 25px 0;
+    font-size: 21px;
+    line-height: 1.8;
+  }
+
+  .volume-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 25px 0;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
+  .royal-order {
+    font-size: 19px;
+    line-height: 1.9;
+    margin-top: 35px;
+    color: #374151;
+  }
+
+  /* Imprint Page */
+  .imprint-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    min-height: 980px;
+  }
+
+  .imprint-card {
+    border: 1px solid #374151;
+    padding: 22px 28px;
+    margin: 25px auto;
+    max-width: 550px;
+    text-align: right;
+    font-size: 17.5px;
+    line-height: 1.8;
+  }
+
+  .page-header {
+    text-align: center;
+    font-size: 16px;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 6px;
+    margin-bottom: 25px;
+  }
+
+  .page-number {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #374151;
+    margin-top: 35px;
+  }
+
+  .basmala {
+    text-align: center;
+    font-size: 28px;
+    margin: 10px 0 15px 0;
+    font-family: 'Aref Ruqaa', serif;
+  }
+
+  .hamdala {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .sheikh-intro {
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+    margin: 25px 0 15px 0;
+    font-family: 'Reem Kufi', 'Amiri', serif;
+  }
+
+  .fasl-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 25px 0 20px 0;
+    font-family: 'Reem Kufi', serif;
+  }
+
+  .hadith-quote {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .body-text {
+    text-align: justify;
+    text-justify: inter-word;
+    text-indent: 28px;
+    margin-bottom: 16px;
+  }
+
+  .footnote-section {
+    margin-top: 30px;
+    border-top: 1px solid #9ca3af;
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+  }
+
+  .video-trigger {
+    color: #1e3a8a;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .video-trigger:hover {
+    color: #b45309;
+  }
+
+  .toc-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: 'Reem Kufi', serif;
+  }
+
+  .toc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 17px;
+  }
+
+  .toc-table th {
+    border-bottom: 2px solid #000;
+    padding: 8px 12px;
+  }
+
+  .toc-table td {
+    padding: 8px 10px;
+    border-bottom: 1px dotted #9ca3af;
+  }
+
+  /* Video Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .modal-content {
+    background: #111827;
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    width: 100%;
+    max-width: 820px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-caption {
+    color: var(--gold);
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-align: right;
+    padding-left: 45px;
+  }
+
+  .modal-content video {
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    background: #000;
+  }
+
+  @media print {
+    body {
+      background: none !important;
+      padding: 0 !important;
+    }
+    .web-nav, .modal-overlay {
+      display: none !important;
+    }
+    .book-viewport {
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+    .book-page {
+      margin: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      page-break-after: always !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .book-page {
+      padding: 30px 20px;
+      font-size: 17.5px;
+    }
+    .thuluth-title {
+      font-size: 38px;
+    }
+    .author-title {
+      font-size: 26px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="book-viewport">
+
+  <!-- شريط التنقل الرقمي للموقع -->
+  <div class="web-nav">
+    <a href="index.html">🏠 العودة للرئيسية</a>
+    <a href="#toc">📜 الفهرس العام</a>
+    <a href="#asanid">📹 أدلة التسجيلات</a>
+    <button class="print-btn" onclick="window.print()">🖨️ طباعة / حفظ كـ PDF</button>
+  </div>
+
+  <!-- الغلاف الخارجي التراثي -->
+  <div class="book-page cover-page">
+    <img src="majmu_fatawa_cover.jpg" alt="غلاف مجموع الفتاوى">
+  </div>
+
+  <!-- الصفحة الأولى: صفحة العنوان الداخلية -->
+  <div class="book-page">
+    <div class="title-page-1">
+      <div>
+        <div class="thuluth-title">مَجْمُوعُ فَتَاوَى</div>
+        <div class="author-title">شَيْخِ gc أَحْمَدَ بنِ إِيهَاب</div>
+        <div class="author-duaa">«عَفَا اللهُ عَنْهُ وَهَدَاهُ»</div>
+      </div>
+
+      <div class="compiler-box">
+        <div style="font-weight: bold; margin-bottom: 5px;">جَمْعُ وَتَرْتِيبُ</div>
+        <div>طُلَّابِ الحَقِّ فِي الدوله الفاروقيه بقياده احمد فاروق «وَفَّقَهُمُ اللهُ»</div>
+        <div>وَمُعَاوَنَةِ الإِخْوَةِ المُتَضَرِّرِينَ «أَجْزَلَ اللهُ صَبْرَهُمْ»</div>
+      </div>
+
+      <div>
+        <div class="volume-title">المُجَلَّدُ الأَوَّلُ</div>
+        <div style="font-size: 24px; font-weight: bold; margin-top: 10px;">كِتَابُ النَّوَازِلِ وَأُصُولِ الفِقْهِ الإِيهَابِيِّ</div>
+      </div>
+
+      <div class="royal-order">
+        طُبِعَ بِأَمْرِ<br>
+        <strong style="font-size: 22px;">مَجْلِسِ النواك محمد ايهاب </strong><br>
+        أَنْجَزَهُ اللهُ لِإِظْهَارِ الحَقَائِقِ وَكَشْفِ الشَّوَارِدِ
+      </div>
+    </div>
+    <div class="page-number">١</div>
+  </div>
+
+  <!-- الصفحة الثانية: صفحة الاعتماد والفهرسة والتوطئة -->
+  <div class="book-page imprint-page">
+    <div>
+      <div style="font-size: 24px; font-weight: bold; margin-bottom: 12px;">طُبِعَتْ هَذِهِ الفَتَاوَى فِي</div>
+      <div style="font-size: 30px; font-weight: bold; font-family: 'Reem Kufi'; margin-bottom: 8px;">مَجْمَعِ نبروه لِلطِّبَاعَةِ وَالنَّشْرِ</div>
+      <div style="font-size: 20px; color: #4b5563;">فِي السِّيرْفَرِ gc</div>
+      <div style="font-size: 19px; margin-top: 20px;">تَحْتَ إِشْرَافِ</div>
+      <div style="font-size: 26px; font-weight: bold; margin-top: 5px;">لَجْنَةِ رَصْدِ النَّوَازِلِ وَالشَّهَادَاتِ المُوَثَّقَةِ</div>
+      <div style="font-size: 18px; margin-top: 15px;">عَامَ ١٤٤٨ هـ - ٢٠٢٦ م</div>
+    </div>
+
+    <div class="imprint-card">
+      <div style="text-align: center; font-weight: bold; margin-bottom: 8px;">فِهْرَسَةُ مَكْتَبَةِ الدِّيسْكُورْدِ الوَطَنِيَّةِ</div>
+      <div><strong>إيهاب، أحمد بن مصطفى.</strong></div>
+      <div>مجموع فتاوى شيخ الدوله الفاروقيه أحمد إيهاب / جمع وترتيب نبروه الجديده والقديمه .</div>
+      <div>٣٢٨ ص ؛ ١٧ × ٢٤ سم</div>
+      <div><strong>رَدْمَك:</strong> ٩-٣٩-٧٧٠-٢٠-٦ (مجموعة الفتاوى)</div>
+      <div>١ - الفتاوى والنوازل الغريبة &nbsp;&nbsp;&nbsp;&nbsp; ٢ - أحكام الميوت والشاتات</div>
+      <div><strong>ديوي:</strong> ٢٠٨,٤ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>رقم الإيداع:</strong> ١٥ / ٢٠٢٦</div>
+    </div>
+
+    <div style="font-size: 17px; line-height: 1.8; color: #374151; text-align: justify; text-indent: 20px; border-top: 1px solid #d1d5db; padding-top: 15px;">
+      <strong>تَنْبِيهُ الطَّبْعِ:</strong> هَذَا الكِتَابُ حُجَّةٌ قَاطِعَةٌ ضُمِّنَتْ فِيهِ أَقْوَالُ الشَّيْخِ كَمَا تَلَفَّظَ بِهَا فِي مَجَالِسِ الرُّومَاتِ دُونَ تَزْيِيفٍ، جَمَعَهَا أَهْلُ الحَقِّ لِئَلَّا يَنْسِبَ إِلَى نَفْسِهِ بَرَاءَةً، وَلِيَعْرِفَ القَاصِي وَالدَّانِي حَقِيقَةَ النَّوَازِلِ الَّتِي أَرْسَاهَا فِيهِمْ.
+    </div>
+    <div class="page-number">٢</div>
+  </div>
+
+  <!-- الصفحة الثالثة: الباب الداخلي مع خطبة الافتتاح -->
+  <div class="book-page">
+    <div style="text-align: center; border-bottom: 2px solid #000; padding-bottom: 25px; margin-bottom: 30px;">
+      <div style="font-size: 32px; font-weight: bold;">كِتَابُ</div>
+      <div style="font-size: 48px; font-weight: 700; font-family: 'Reem Kufi', serif; margin: 10px 0;">أُصُولِ الفِقْهِ الإِيهَابِيِّ</div>
+      <div style="font-size: 24px; font-weight: bold; font-family: 'Aref Ruqaa';">الجُزْءُ الأَوَّلُ: الاِتِّبَاعُ وَالنَّوَازِلُ الشَّاذَّةُ</div>
+    </div>
+
+    <div class="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="hamdala">الحَمْدُ لِلَّهِ الَّذِي بَيَّنَ الحُجَّةَ، وَأَوْضَحَ المَحَجَّةَ، وَأَمَرَ بِالعَدْلِ وَالإنْصَافِ.</div>
+
+    <p class="body-text">
+      أَمَّا بَعْدُ: فَإِنَّ عِلْمَ الفِقْهِ وَالنَّوَازِلِ قَدْ ابْتُلِيَ فِي زَمَانِنَا هَذَا بِمَنْ جَعَلَ أَهْوَاءَ الجَلَسَاتِ شَرِيعَةً مَتْبُوعَةً، وَصَارَ يَسْتَنْبِطُ الأَحْكَامَ عَلَى قَدْرِ مَا يَهْوَاهُ خَاطِرُهُ أَوْ تَقْتَضِيهِ مَصْلَحَتُهُ فِي رُومَاتِ سِيرْفَرِ gc. وَلَمَّا كَانَ شَيْخُ gc <strong>أَحْمَد إِيهَاب</strong> قَدْ صَدَرَتْ عَنْهُ فَتَاوَى تَحَارُ فِيهَا العُقُولُ، وَتَنْكَرُهَا الأُصُولُ، رَأَى رِجَالُ الدَّوْلَةِ الفَارُوقِيَّةِ أَنْ يُدَوِّنُوهَا عَلَى سَمْتِ كُتُبِ المُتَقَدِّمِينَ تَبْوِيباً وَتَفْرِيعاً؛ لِيَقِفَ كُلُّ ذِي عَيْنَيْنِ فِي نَبْرُوه وَسَائِرِ البِلَادِ عَلَى مَنَابِتِ هَذِهِ الأَحْكَامِ.
+    </p>
+    <p class="body-text">
+      وَقَدْ قَسَّمْنَا هَذَا المُجَلَّدَ عَلَى أَبْوَابٍ مُحْكَمَةٍ تَنْتَظِمُ فِيهَا فَتَاوَاهُ فِي الأَلْفَاظِ وَالسِّبَابِ، وَالأَعْدَادِ وَالمَعَازِفِ، وَالشَّبَكَاتِ الرَّقْمِيَّةِ، ثُمَّ مَا جَاءَ فِي التَّكْفِيرِ وَالحُدُودِ وَالحَصَانَةِ الذَّاتِيَّةِ، مُرْفَقَةً بِأَدِلَّتِهَا المَرْئِيَّةِ الصَّوْتِيَّةِ الَّتِي لَا تَقْبَلُ الشَّكَّ وَلَا التَّأْوِيلَ.
+    </p>
+    <div class="page-number">٣</div>
+  </div>
+
+  <!-- الصفحة الرابعة: مقدمة التحقيق التراثية التفصيلية -->
+  <div class="book-page">
+    <div class="page-header">مُقَدِّمَةُ التَّحْقِيقِ - مَنْهَجُ الشَّيْخِ وَقَوَاعِدُهُ الأَصْلِيَّةُ</div>
+
+    <div class="fasl-header" style="font-size: 30px;">فَـــصْـــلٌ فِي مَنْهَجِ الاسْتِنْبَاطِ الإِيهَابِيِّ</div>
+
+    <p class="body-text">
+      اعْلَمْ أَنَّ قَوَاعِدَ شَيْخِ gc أَحْمَد إِيهَاب بُنِيَتْ عَلَى أَصْلَيْنِ كَبِيرَيْنِ تَدُورُ حَوْلَهُمَا جَمِيعُ فَتَاوَاهُ وَشَطَحَاتِهِ فِي رُومَاتِ نَبْرُوه وَالدَّوْلَةِ الفَارُوقِيَّةِ:
+    </p>
+    <p class="body-text">
+      <strong>الأَصْلُ الأَوَّلُ:</strong> اعْتِبَارُ سُلْطَةِ المَجْلِسِ حَاكِمَةً عَلَى الأُصُولِ؛ فَمَا رَآهُ هُوَ مَصْلَحَةً لِنَفْسِهِ أَوْ لِمَجْمُوعَتِهِ فِي لَحْظَةِ النِّزَاعِ جَعَلَهُ دِيناً مُلْزِماً، وَمَا رَآهُ مُخَالِفاً لِمُرَادِهِ أَلْحَقَ بِهِ صِفَةَ التَّحْرِيمِ أَوْ التَّكْفِيرِ دُونَ تَوَقُّفٍ عَلَى نَصٍّ أَوْ إِجْمَاعٍ مَعْلُومٍ.
+    </p>
+    <p class="body-text">
+      <strong>الأَصْلُ الثَّانِي:</strong> قِيَاسُ الغَائِبِ عَلَى الشَّاهِدِ بِأَضْعَفِ الأَوْصَافِ؛ كَقِيَاسِهِ الصَّمْتَ عَلَى التَّكَبُّرِ، وَقِيَاسِهِ رِقَّةَ الصَّوْتِ عَلَى الخُرُوجِ عَنِ الرُّجُولَةِ، وَقِيَاسِهِ لَفْظَ "اتْبَضَنْتُ" عَلَى كُفْرِ النِّعَمِ لِاشْتِقَاقِهِ اللُّغَوِيِّ المَزْعُومِ مِنْ بَيْضِ الطَّعَامِ!
+    </p>
+    <p class="body-text">
+      وَلَمَّا كَانَ كَثِيرٌ مِنْ رُوَّادِ سِيرْفَرِ gc يَسْمَعُونَ هَذِهِ المَقَالَاتِ فَيَظُنُّونَهَا عَفْوَ خَاطِرٍ، كَانَ مِنْ وَاجِبِ النُّصْحِ تَسْجِيلُهَا وَتَوْثِيقُ كُلِّ فَتْوَى بِزَمَانِهَا وَتَسْجِيلِهَا المَرْئِيِّ، حَتَّى يَكُونَ هَذَا المُصَنَّفُ شَاهِداً عَدْلاً يُقْضَى بِهِ فِي مَجَالِسِ القَضَاءِ الإِلِكْتُرُونِيِّ.
+    </p>
+    <p class="body-text">
+      وَهَا نَحْنُ نَشْرَعُ فِي سَرْدِ المَسَائِلِ بَاباً بَاباً، عَلَى مَا جَرَى بِهِ لِسَانُهُ وَثَبَتَ فِي شَرَائِطِ التَّسْجِيلِ، وَاللهُ المُسْتَعَانُ وَعَلَيْهِ التُّكْلَانُ.
+    </p>
+    <div class="page-number">٤</div>
+  </div>
+
+  <!-- الصفحة الخامسة: المتن الفقهي - الباب الأول: الآداب والألفاظ -->
+  <div class="book-page">
+    <div class="page-header">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ - فِي الآدَابِ وَالأَلْفَاظِ</div>
+
+    <div class="sheikh-intro">قَالَ شَيْخُ السِّيرْفَرَاتِ هَدَاهُ اللهُ :</div>
+    <div class="fasl-header">فَـــصْـــلٌ</div>
+
+    <p class="body-text">
+      الأَصْلُ فِي الأَحْكَامِ عِنْدَنَا أَنْ تَدُورَ مَعَ مَصْلَحَةِ المَجْلِسِ وَمَا يَسْتَقِرُّ عَلَيْهِ أَمْرُ الرُّومَاتِ؛ فَمِنْ ذَلِكَ: أَنَّهُ لَا يَجُوزُ لِمَنْ كَانَ فِي حَلْقَةِ الحِوَارِ أَنْ يُسْقِطَ مَرَاتِبَ الأَقْدَمِيَّةِ، وَقَدْ قَرَّرْنَا فِي ذَلِكَ أَنَّ <strong class="hadith-quote">«حَرَامٌ أَنْ تُنَادِيَ مَنْ هُوَ أَكْبَرُ مِنْكَ بِاسْمِهِ المُجَرَّدِ»</strong><sup>(١)</sup>، وَذَلِكَ لِأَنَّ إِسْقَاطَ اللَّقَبِ كَبِيرَةٌ تُورِثُ الجَرَاءَةَ، وَتُسْقِطُ هَيْبَةَ السِّيرْفَرِ، وَتَفْتَحُ بَابَ السَّفَاهَةِ بَيْنَ الأَقْرَانِ، فَلَا بُدَّ مِنْ تَقْدِيمِ «حَضْرَتِكَ» أَوْ «يَا كَبِيرُ».
+    </p>
+    <p class="body-text">
+      وَأَمَّا مَا يَلْهَجُ بِهِ العَوَامُّ فِي خِطَابِهِمْ مِنْ قَوْلِهِمْ: «يَا بَاشَا»، فَقَدْ وَرَدَ عَنَّا تَغْلِيظُ النَّكِيرِ فِيهِ؛ إِذْ قُلْنَا مَنْصُوصاً: <strong class="hadith-quote">«مَنْ يَقُلْ كَلِمَةَ "بَاشَا" يَأْخُذْ ذُنُوباً وَآثَاماً»</strong><sup>(٢)</sup>؛ لِأَنَّ لَفْظَ البَاشَاوِيَّةِ فِيهِ شُبْهَةُ نَفْخِ الأَنَا وَالتَّعْظِيمِ الدَّخِيلِ الَّذِي يُورِثُ التَّمَلُّقَ المَذْمُومَ، فَرَأَيْنَا أَنَّ قَائِلَهَا يَكْسِبُ سَيِّئَةً فِي كُلِّ مَرَّةٍ يَنْطِقُ بِهَا فِي المَجَالِسِ.
+    </p>
+    <p class="body-text">
+      وَكَذَلِكَ جَاءَ فِي فِقْهِ التَّأَوُّهِ وَالتَّعْبِيرِ عَنِ المَشَاقِّ: <strong class="hadith-quote">«حَرَامٌ عَلَى الرَّجُلِ أَنْ يَقُولَ "آه"؛ لِأَنَّ فِيهَا تَشَبُّهاً بِالنِّسَاءِ فِي الرِّقَّةِ وَالخُضُوعِ بِالقَوْلِ»</strong>؛ وَعِلَّتُهُ أَنَّ الرُّجُولَةَ فِي فِقْهِ السِّيرْفَرَاتِ تَسْتَوْجِبُ الخُشُونَةَ التَّامَّةَ، وَأَنَّ التَّأَوُّهَ بِالمَدِّ يَنْقُضُ هَيْبَةَ المُتَكَلِّمِ وَيُلْحِقُهُ بِمَنْ نُهِيَ عَنِ التَّشَبُّهِ بِهِنَّ.
+    </p>
+
+    <div class="footnote-section">
+      (١) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191201_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ١: نداء الأكبر سناً باسمه المجرد')">▶️ تشغيل التسجيل المرئي (19:12:01)</span>.<br>
+      (٢) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191358_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٢: وزر من قال كلمة باشا')">▶️ تشغيل التسجيل المرئي (19:13:58)</span>.
+    </div>
+    <div class="page-number">٥</div>
+  </div>
+
+  <!-- الصفحة السادسة: السباب ودفع الصائل ومخاطبة الأبكم وتحريم قول اتبضن -->
+  <div class="book-page">
+    <div class="page-header">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ - فِي السِّبَابِ وَالأَبْكَمِ وَنِعْمَةِ البَيْضِ</div>
+
+    <div class="sheikh-intro">مَسْأَلَةٌ فِي جَوَازِ الشَّتِيمَةِ لِأَخْذِ الحَقِّ</div>
+    <p class="body-text">
+      وَسُئِلَ رَحِمَهُ اللهُ عَنِ السِّبَابِ وَالشَّتَائِمِ المُغَلَّظَةِ، هَلْ تَسُوغُ لِلْمَرْءِ عِنْدَ المُشَاحَّةِ فِي الرُّومَاتِ؟ فَأَجَابَ: <strong class="hadith-quote">«يَجُوزُ السِّبَابُ وَالشَّتِيمَةُ إِذَا كَانَتْ لِأَخْذِ الحَقِّ وَدَفْعِ المَظَالِمِ»</strong><sup>(٣)</sup>. وَتَخْرِيجُهَا أَنَّ انْتِزَاعَ الحُقُوقِ قَدْ يَعْسُرُ بِاللِّسَانِ اللَّيِّنِ، فَإِذَا اسْتَعْصَى الغَرِيمُ جَازَ إِطْلَاقُ العَنَانِ لِلْفَحْشَاءِ رَدْعاً لَهُ!
+    </p>
+
+    <div class="sheikh-intro">مَسْأَلَةٌ فِي تَرْكِ مُخَاطَبَةِ الأَبْكَمِ (الأَخْرَسِ)</div>
+    <p class="body-text">
+      وَمِنْ نَوَادِرِهِ قَوْلُهُ فِي فَاقِدِ النُّطْقِ: <strong class="hadith-quote">«الأَخْرَسُ حَرَامٌ أَنْ نُكَلِّمَهُ؛ لِأَنَّهُ مُتَكَبِّرٌ لَا يَرُدُّ الجَوَابَ!»</strong><sup>(٤)</sup>. فَحَمَلَ خَرَسَهُ عَلَى مَحْمَلِ التَّرَفُّعِ عَنِ الإِجَابَةِ، وَأَوْجَبَ مُعَامَلَتَهُ بِالمُقَاطَعَةِ الجَمَاعِيَّةِ زَجْراً لَهُ عَنْ هَذَا الكِبْرِ المُتَوَهَّمِ.
+    </p>
+
+    <div class="sheikh-intro">مَسْأَلَةٌ فِي تَحْرِيمِ قَوْلِ «اتْبَضَنْتُ» لِعِلَّةِ جُحُودِ نِعْمَةِ البَيْضِ</div>
+    <p class="body-text">
+      وَشَدَّدَ الشَّيْخُ النَّكِيرَ عَلَى مَنْ يَقُولُ فِي مَجَالِسِ الرُّومَاتِ لَفْظَةَ: «اتْبَضَنْتُ»، وَقَضَى فِيهَا بِقَضَاءٍ مُبْتَكَرٍ فَقَالَ: <strong class="hadith-quote">«مَنْ يَقُلْ كَلِمَةَ "اتْبَضَنْتُ" فَهُوَ حَرَامٌ آثِمٌ؛ لِأَنَّهُ يَسْتَهْزِئُ بِنِعْمَةِ اللهِ الَّتِي هِيَ (البَيْضُ)!»</strong>.  
+      وَتَأْوِيلُهُ العَجِيبُ فِي ذَلِكَ: أَنَّ اشْتِقَاقَ هَذِهِ الكَلِمَةِ فِي العُرْفِ رَاجِعٌ عِنْدَهُ إِلَى طَعَامِ البَيْضِ الَّذِي امْتَنَّ اللهُ بِهِ عَلَى عِبَادِهِ غِذَاءً وَقُوتاً، فَإِذَا اسْتَعْمَلَ المَرْءُ هَذَا اللَّفْظَ فِي مَقَامِ الضَّجَرِ وَالمَلَلِ وَالتَّبَرُّمِ، كَانَ ذَلِكَ عِنْدَهُ جُحُوداً لِلنِّعْمَةِ وَاسْتِخْفَافاً بِالمَطْعُومِ الَّذِي يُوجِبُ الشُّكْرَ لَا التَّسَخُّطَ!
+    </p>
+
+    <div class="footnote-section">
+      (٣) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191639_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٣: جواز الشتيمة لأخذ الحق')">▶️ تشغيل التسجيل المرئي (19:16:39)</span>.<br>
+      (٤) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191847_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٤: ترك مخاطبة الأبكم لظن التكبر')">▶️ تشغيل التسجيل المرئي (19:18:47)</span>.
+    </div>
+    <div class="page-number">٦</div>
+  </div>
+
+  <!-- الصفحة السابعة: الأرقام الفردية ولون اللباس والمعازف الحديثة -->
+  <div class="book-page">
+    <div class="page-header">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ - فِي الحِسَابِ وَالأَلْوَانِ وَالمَعَازِفِ</div>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي حُرْمَةِ الأَرْقَامِ الفَرْدِيَّةِ وَلُبْسِ الأَحْمَرِ بَعْدَ المَغْرِبِ</div>
+    <p class="body-text">
+      قَضَى الشَّيْخُ بِأَنَّ <strong class="hadith-quote">«الأَرْقَامَ الفَرْدِيَّةَ كُلَّهَا حَرَامٌ، وَلَا حِلَّ إِلَّا فِي الأَشْفَاعِ الزَّوْجِيَّةِ»</strong>؛ فَأَوْجَبَ فِي كُلِّ مُعَامَلَةٍ لُزُومَ الزَّوْجِيِّ كَاثْنَيْنِ وَأَرْبَعَةٍ. وَكَذَلِكَ جَاءَ عَنْهُ: <strong class="hadith-quote">«تَحْرِيمُ لُبْسِ اللَّوْنِ الأَحْمَرِ بَعْدَ صَلَاةِ المَغْرِبِ»</strong><sup>(٥)</sup>؛ لِمَا فِيهِ عِنْدَهُ مِنْ مُوَاطَأَةِ حُمْرَةِ الشَّفَقِ الغَارِبِ وَاسْتِجْلَابِ الشَّيَاطِينِ إِلَى رُومَاتِ اللَّيْلِ.
+    </p>
+
+    <div class="sheikh-intro" style="font-size: 22px;">بَابُ المَعَازِفِ وَتَكْفِيرِ المُغَنِّينَ وَاسْتِثْنَاءُ الاسْكِيبِيدِي وَحَمُو الطِّيخَا</div>
+    <p class="body-text">
+      وَسُئِلَ رَحِمَهُ اللهُ عَنِ الغِنَاءِ وَأَهْلِهِ فِي زَمَانِنَا، فَأَطْلَقَ حُكْماً مُغَلَّظاً لَمْ يُسْبَقْ إِلَيْهِ، إِذْ قَرَّرَ أَنَّ: <strong class="hadith-quote">«كُلَّ الأَغَانِي حَرَامٌ قَطْعاً، وَجَمِيعَ المُغَنِّينَ كُفَّارٌ خَارِجُونَ عَنِ المِلَّةِ، مَا عَدَا أَغَانِي "اسْكِيبِيدِي تُوَالِيتْ" (Skibidi Toilet)، وَأَنَاشِيدَ "حَمُو الطِّيخَا"، وَأَهَازِيجَ "اسْتِيل إِيه بُرَيْن رُوتْ" (Steal a Brainrot)!»</strong>.
+    </p>
+    <p class="body-text">
+      وَتَخْرِيجُ هَذَا الاسْتِثْنَاءِ الفَرِيدِ عِنْدَهُ: أَنَّ عَامَّةَ الأَغَانِي تُورِثُ فِتْنَةَ القُلُوبِ وَالعِشْقِ، فَاسْتَوْجَبَ أَهْلُهَا التَّكْفِيرَ عِنْدَهُ؛ أَمَّا أَهَازِيجُ "الاسْكِيبِيدِي" وَشِيلَاتُ "البُرَيْن رُوت" وَمَهْرَجَانَاتُ "حَمُو الطِّيخَا"، فَلَيْسَ فِيهَا مَعْنًى يُخْشَى مِنْهُ الفِتْنَةُ، بَلْ هِيَ أَصْوَاتٌ تَمْحُو العَقْلَ مَحْواً فَلَا يَبْقَى لِلْهَوَى مَوْضِعٌ! فَأَلْحَقَهَا بِالمُبَاحَاتِ بَلْ بِالمُسْتَحَبَّاتِ فِي مَجَالِسِ الرُّومَاتِ كَمَا زَعَمَ!
+    </p>
+
+    <div class="footnote-section">
+      (٥) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191935_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٥: الأرقام الفردية ولبس الأحمر بعد المغرب')">▶️ تشغيل التسجيل المرئي (19:19:35)</span>.
+    </div>
+    <div class="page-number">٧</div>
+  </div>
+
+  <!-- الصفحة الثامنة: الديسكورد والتيك توك ومحرمات كتم الصوت -->
+  <div class="book-page">
+    <div class="page-header">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ - فِي النَّوَازِلِ الرَّقْمِيَّةِ</div>
+
+    <div class="sheikh-intro" style="font-size: 22px;">التَّفْرِيقُ بَيْنَ سِيرْفَرَاتِ الدِّيسْكُورْدِ وَفَضَاءِ التِّيكْ تُوكْ</div>
+    <p class="body-text">
+      وَابْتَدَعَ الشَّيْخُ فِي فِقْهِ المَنَصَّاتِ الرَّقْمِيَّةِ حُكْماً جُغْرَافِيّاً غَرِيباً؛ إِذْ نَصَّ عَلَى أَنَّهُ: <strong class="hadith-quote">«حَرَامٌ أَنْ تَضَعَ صُورَةً عَارِيَةً أَوْ غَيْرَ لَائِقَةٍ لَيْسَتْ صُورَتَكَ فِي مَجْمُوعَاتِ الدِّيسْكُورْدِ، أَمَّا فِي التِّيكْ تُوكْ فَعَادِيٌّ لَا حَرَجَ فِيهِ»</strong><sup>(٦)</sup>.  
+      فَجَعَلَ الذَّنْبَ مُقَيَّداً بِاسْمِ المَوْقِعِ؛ فَالدِّيسْكُورْدُ عِنْدَهُ حَرَمٌ مَصُونٌ، أَمَّا التِّيكْ تُوكْ فَلَمَّا كَانَ سَاحَةً مَفْتُوحَةً لِعَامَّةِ الخَلْقِ سَقَطَ عَنْهُ الحَرَجُ عِنْدَهُ!
+    </p>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي مُشَاهَدَةِ المُحَرَّمَاتِ بِشَرْطِ كَتْمِ الصَّوْتِ (MUTE)</div>
+    <p class="body-text">
+      وَمِنْ أَبْرَزِ قَوَاعِدِهِ الَّتِي سَارَتْ بِهَا الرُّكْبَانُ فِي تَبْرِيرِ الشَّهَوَاتِ: أَنَّ <strong class="hadith-quote">«مُشَاهَدَةَ الأَفْلَامِ المُحَرَّمَةِ حَلَالٌ جَائِزَةٌ إِذَا كَانَتْ مَكْتُومَةَ الصَّوْتِ»</strong>.  
+      وَتَأْوِيلُهُ البَاطِلُ فِي ذَلِكَ: أَنَّ التَّحْرِيمَ إِنَّمَا نَزَلَ فِي الأَصْوَاتِ وَالنَّغَمَاتِ وَالتَّأَوُّهَاتِ؛ فَإِذَا مَا جَرَّدَ المَرْءُ المَقْطَعَ مِنْ صَوْتِهِ صَارَتِ الصُّورَةُ جِرْماً صَامِتاً لَا يُثِيرُ فِتْنَةً سَمْعِيَّةً، فَيَحِلُّ النَّظَرُ إِلَيْهِ حَسَبَ زَعْمِهِ المُتَهَافِتِ!
+    </p>
+    <p class="body-text">
+      وَهَذَا القَوْلُ مِنْ أَظْهَرِ مَا يُبَيِّنُ جَهْلَهُ بِقَوَاعِدِ الشَّرِيعَةِ الَّتِي جَاءَتْ بِغَضِّ البَصَرِ أَوَّلاً، وَحِفْظِ الفَرْجِ ثَانِياً، فَلَمْ يُفَرِّقْ بَيْنَ سَمْعٍ وَبَصَرٍ فِي المَحْظُورَاتِ.
+    </p>
+
+    <div class="footnote-section">
+      (٦) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022192302_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٦: فقه الديسكورد والتيك توك والنظر الصامت')">▶️ تشغيل التسجيل المرئي (19:23:02)</span>.
+    </div>
+    <div class="page-number">٨</div>
+  </div>
+
+  <!-- الصفحة التاسعة: اللعب مع البنات، الفاحشة للتعلم، وأقوال الدكتور ضياء العوضي -->
+  <div class="book-page">
+    <div class="page-header">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ - فِي العَلَاقَاتِ وَأَقْوَالِ العِوَضِيِّ</div>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي مُخَالَطَةِ الإِنَاثِ وَاسْتِبَاحَةِ الفَاحِشَةِ لِلتَّعَلُّمِ</div>
+    <p class="body-text">
+      أَفْتَى الشَّيْخُ بِأَنَّ <strong class="hadith-quote">«اللَّعِبَ مَعَ البَنَاتِ حَلَالٌ مُطْلَقاً، إِلَّا الزَّانِي وَالزَّانِيَةَ»</strong><sup>(٧)</sup>؛ ثُمَّ تَجَرَّأَ فِي نَازِلَةٍ أُخْرَى فَقَالَ: <strong class="hadith-quote">«ارْتِكَابُ الفَاحِشَةِ حَلَالٌ إِذَا كَانَ بِنِيَّةِ التَّعَلُّمِ وَاكْتِسَابِ الخِبْرَةِ بَعْدَ بُلُوغِ الثَّامِنَةَ عَشْرَةَ عَاماً»</strong><sup>(٨)</sup>؛ فَجَعَلَ بُلُوغَ السِّنِّ القَانُونِيَّةِ مَسْقَطاً لِلْحُدُودِ وَالحُرُمَاتِ بِدَعْوَى "التَّعَلُّمِ"!
+    </p>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي حِلِّ كَلَامِ الدُّكْتُورِ ضِيَاءِ العِوَضِيِّ وَاسْتِثْنَاءِ مَنْ سُمِّيَ "كَرِيم" أَوْ "مِيشُو سَعِيد"</div>
+    <p class="body-text">
+      وَسُئِلَ الشَّيْخُ عَنْ أَقْوَالِ وَمَقَالَاتِ الدُّكْتُورِ الأُسْتَاذِ <strong>ضِيَاءِ العِوَضِيِّ</strong> فِي الرُّومَاتِ وَالمَجَالِسِ، فَقَالَ: <strong class="hadith-quote">«كُلُّ كَلَامِ الدُّكْتُورِ الأُسْتَاذِ ضِيَاءِ العِوَضِيِّ حَلَالٌ مَقْبُولٌ لَا غُبَارَ عَلَيْهِ، مَا عَدَا قَوْلَهُ: (كُلُّ مَنِ اسْمُهُمْ كَرِيمٌ لَيْسُوا رِجَالاً، وَمِيشُو سَعِيد لَيْسَ مِنَ الرِّجَالِ)؛ فَهَذَا القَوْلُ مِنْهُ مَرْدُودٌ!»</strong>.
+    </p>
+    <p class="body-text">
+      وَتَأْوِيلُ الشَّيْخِ فِي ذَلِكَ: أَنَّ الدُّكْتُورَ ضِيَاءً عِنْدَهُ مِنَ الكِبَارِ الَّذِينَ لَا يُرَدُّ لَهُمْ كَلَامٌ فِي الأُصُولِ، وَلَكِنَّهُ حِينَ خَاضَ فِي الطَّعْنِ فِي رُجُولَةِ مَنْ تَسَمَّى بِـ (كَرِيم) عَلَى العُمُومِ، أَوْ أَلْحَقَ بِذَلِكَ (مِيشُو سَعِيد) خَرَجَ عَنْ مَقَامِ العَدْلِ، فَأَسْقَطَ الشَّيْخُ هَذَا القَوْلَ وَحْدَهُ وَأَبْقَى عَلَى حِلِّ سَائِرِ مَقَالَاتِهِ وَأَحْكَامِهِ مَرْفُوعَةَ الرَّأْسِ!
+    </p>
+
+    <div class="footnote-section">
+      (٧) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022192442_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٧: اللعب مع البنات واستباحة محمود')">▶️ تشغيل التسجيل المرئي (19:24:42)</span>.<br>
+      (٨) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022193806_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٨: الفاحشة للتعلم وتغسيل المهتدي')">▶️ تشغيل التسجيل المرئي (19:38:06)</span>.
+    </div>
+    <div class="page-number">٩</div>
+  </div>
+
+  <!-- الصفحة العاشرة: تكفير من يغلط في أحمد إيهاب، استباحة محمود، الحصانة الذاتية -->
+  <div class="book-page">
+    <div class="page-header">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ - فِي الرِّدَّةِ وَالخُصُوصِيَّاتِ وَالحَصَانَةِ</div>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي كُفْرِ مَنْ خَطَّأَ أَحْمَدَ إِيهَاب أَوْ غَلِطَ فِيهِ</div>
+    <p class="body-text">
+      وَبَلَغَ الغُلُوُّ بِشَيْخِ gc ذِرْوَتَهُ حِينَ قَعَّدَ لِبَابِ الرِّدَّةِ فَقَالَ: <strong class="hadith-quote">«مَنْ يَغْلَطْ فِي أَحْمَدَ إِيهَاب أَوْ يَرُدَّ عَلَيْهِ أَوْ يُخَطِّئْهُ فَهُوَ كَافِرٌ خَارِجٌ عَنِ المِلَّةِ!»</strong>.  
+      فَجَعَلَ ذَاتَهُ مِعْيَاراً لِلإِيمَانِ وَالكُفْرِ، فَمَنْ وَافَقَهُ وَسَلَّمَ لَهُ فَهُوَ المُؤْمِنُ الحَقُّ، وَمَنْ أَنْكَرَ عَلَيْهِ هَفْوَةً أَوْ خَطَّأَهُ فِي مَجْلِسٍ فَقَدْ حَلَّتْ عَلَيْهِ رِبْقَةُ الكُفْرِ عِنْدَهُ!
+    </p>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي اسْتِبَاحَةِ مَحْمُودٍ وَتَطْهِيرِ الدَّاخِلِ فِي الإِسْلَامِ</div>
+    <p class="body-text">
+      وَمِنْ شَوَاذِّهِ: <strong class="hadith-quote">«اسْتِبَاحَةُ مَحْمُودٍ وَالنَّيْلُ مِنْهُ حَلَالٌ دُونَ سَائِرِ الخَلْقِ»</strong>؛ إِذْ جَعَلَ خُصُومَتَهُ لِمَحْمُودٍ ذَرِيعَةً لِإِسْقَاطِ حُرْمَتِهِ كُلِّيَّةً. وَكَذَلِكَ قَوْلُهُ: <strong class="hadith-quote">«أَكْثَرُ النَّاسِ حِفْظاً لِلْقُرْآنِ فِي الرُّومِ يَلْزَمُهُ أَنْ يُغَسِّلَ الكَافِرَ الدَّاخِلَ فِي الإِسْلَامِ بِيَدِهِ اليُمْنَى أَوَّلاً»</strong>، فِي إِقْحَامٍ غَرِيبٍ لِلْحِفْظِ فِي شُؤُونِ الغُسْلِ الجَسَدِيِّ.
+    </p>
+
+    <div class="sheikh-intro" style="font-size: 22px;">فِي صَلَاحِيَّةِ الشَّيْخِ فِي مُسَامَحَةِ نَفْسِهِ ذَاتِيّاً</div>
+    <p class="body-text">
+      وَخَتَمَ مَذْهَبَهُ بِالقَاعِدَةِ الكُبْرَى: <strong class="hadith-quote">«الشَّيْخُ يَمْلِكُ سُلْطَةً مُطْلَقَةً فِي مُسَامَحَةِ نَفْسِهِ وَإِسْقَاطِ تَبِعَاتِ خَطَايَاهُ ذَاتِيّاً»</strong><sup>(٩)</sup>؛ فَإِذَا مَا أُدِينَ بِتَنَاقُضٍ أَوْ ظُلْمٍ، خَلَا بِنَفْسِهِ لَحْظَةً وَأَبْرَأَ ذِمَّتَهُ تِلْقَائِيّاً دُونَ رَدِّ حَقٍّ أَوْ اعْتِذَارٍ لِمَظْلُومٍ!
+    </p>
+
+    <div class="footnote-section">
+      (٩) <span class="video-trigger" onclick="playVideo('Screen Recording_20261022194730_ayyoubi__Untitled_Medal.mp4', 'تسجيل الواقعة ٩: المسامحة الذاتية والحصانة المطلقة')">▶️ تشغيل التسجيل المرئي (19:47:30)</span>.
+    </div>
+    <div class="page-number">١٠</div>
+  </div>
+
+  <!-- الصفحة الحادية عشرة: ملحق الأسانيد والتسجيلات المرئية الكامل -->
+  <div class="book-page" id="asanid">
+    <div class="page-header">مَلْحَقُ الأَسَانِيدِ - تَسْجِيلَاتُ الإِدَانَةِ المَرْئِيَّةِ المُعْتَمَدَةِ</div>
+
+    <div class="sheikh-intro" style="font-size: 26px;">بَيَانُ الأَسَانِيدِ وَالتَّسْجِيلَاتِ الصَّوْتِيَّةِ المَرْئِيَّةِ</div>
+    <p class="body-text">
+      تَوْثِيقاً لِهَذِهِ النَّوَازِلِ وَحِفْظاً لِلْأَسَانِيدِ الَّتِي جَرَتْ عَلَى أَلْسِنَةِ أَهْلِ الرُّومَاتِ، نَسْرُدُ هُنَا قَائِمَةَ التَّسْجِيلَاتِ الحَيَّةِ المُعْتَمَدَةِ لَدَى هَيْئَةِ التَّحْقِيقِ كَأَدِلَّةِ إِدَانَةٍ قَاطِعَةٍ (اضغط على أي تسجيل للمشاهدة فوراً):
+    </p>
+
+    <div style="font-size: 17.5px; line-height: 2.2; margin-top: 20px;">
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191201_ayyoubi__Untitled_Medal.mp4', 'التسجيل الأول: نداء الأكبر سناً باسمه المجرد')">التَّسْجِيلُ الأَوَّلُ (19:12:01): وَاقِعَةُ نِدَاءِ الأَكْبَرِ سِنّاً بِاسْمِهِ وَبَيَانُ عُقُوقِهِ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191358_ayyoubi__Untitled_Medal.mp4', 'التسجيل الثاني: وزر من قال كلمة باشا')">التَّسْجِيلُ الثَّانِي (19:13:58): تَغْلِيظُ الآثَامِ لِمَنْ نَطَقَ بِلَفْظِ "بَاشَا".</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191639_ayyoubi__Untitled_Medal.mp4', 'التسجيل الثالث: جواز الشتيمة لأخذ الحق')">التَّسْجِيلُ الثَّالِثُ (19:16:39): جَوَازُ الشَّتِيمَةِ وَالسِّبَابِ لِاسْتِخْلَاصِ الحُقُوقِ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191847_ayyoubi__Untitled_Medal.mp4', 'التسجيل الرابع: ترك مخاطبة الأبكم')">التَّسْجِيلُ الرَّابِعُ (19:18:47): حُرْمَةُ مُخَاطَبَةِ الأَبْكَمِ وَدَعْوَى تَكَبُّرِهِ عَنِ الرَّدِّ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022191935_ayyoubi__Untitled_Medal.mp4', 'التسجيل الخامس: الأرقام الفردية ولبس الأحمر')">التَّسْجِيلُ الخَامِسُ (19:19:35): تَحْرِيمُ الأَرْقَامِ الفَرْدِيَّةِ وَحَظْرُ اللَّوْنِ الأَحْمَرِ بَعْدَ المَغْرِبِ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022192302_ayyoubi__Untitled_Medal.mp4', 'التسجيل السادس: الديسكورد والتيك توك والمشاهدة الصامتة')">التَّسْجِيلُ السَّادِسُ (19:23:02): فِقْهُ الدِّيسْكُورْدِ وَالتِّيكْ تُوكْ وَاسْتِحْلَالُ النَّظَرِ مَكْتُومَ الصَّوْتِ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022192442_ayyoubi__Untitled_Medal.mp4', 'التسجيل السابع: اللعب مع البنات واستباحة محمود')">التَّسْجِيلُ السَّابِعُ (19:24:42): مُسَامَرَةُ الفَتَيَاتِ وَاسْتِبَاحَةُ مَحْمُودٍ بِعَيْنِهِ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022193806_ayyoubi__Untitled_Medal.mp4', 'التسجيل الثامن: الفاحشة للتعلم وتطهير الداخل بيمينه')">التَّسْجِيلُ الثَّامِنُ (19:38:06): دَعْوَى ارْتِكَابِ الفَاحِشَةِ لِلتَّعَلُّمِ وَتَغْسِيلُ المَهْدِيِّ بِاليَمِينِ.</span></div>
+      <div>• 📹 <span class="video-trigger" onclick="playVideo('Screen Recording_20261022194730_ayyoubi__Untitled_Medal.mp4', 'التسجيل التاسع: المسامحة الذاتية والحصانة')">التَّسْجِيلُ التَّاسِعُ (19:47:30): المُسَامَحَةُ الذَّاتِيَّةُ وَإِسْقَاطُ الشَّيْخِ لِتَبِعَاتِ نَفْسِهِ.</span></div>
+    </div>
+
+    <div style="margin-top: 35px; border-top: 1px dashed #4b5563; padding-top: 15px; font-size: 16.5px; color: #4b5563; text-align: justify;">
+      <strong>إِقْرَارُ الهَيْئَةِ:</strong> هَذِهِ التَّسْجِيلَاتُ مَحْفُوظَةٌ بِأَعْيَانِهَا عَلَى خَوَادِمِ المَوْقِعِ، وَتُعْتَبَرُ المَرْجِعَ الرَّسْمِيَّ فِي كُلِّ قَوْلٍ نُسِبَ لِلشَّيْخِ فِي هَذَا المُصَنَّفِ.
+    </div>
+    <div class="page-number">١١</div>
+  </div>
+
+  <!-- الصفحة الثانية عشرة: الفهرس التفصيلي الختامي لكامل المسائل الـ 18 -->
+  <div class="book-page" id="toc">
+    <div class="toc-title">فِهْرِسُ المُجَلَّدِ الأَوَّلِ</div>
+    <div style="text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 15px;">كِتَابُ أُصُولِ الفِقْهِ الإِيهَابِيِّ وَنَوَازِلِ السِّيرْفَرَاتِ</div>
+
+    <table class="toc-table">
+      <thead>
+        <tr>
+          <th style="width: 78%; text-align: right;">المَوْضُـــــــــــــــــــــــــــــــــــــــــــــــــــــــــوعُ</th>
+          <th style="width: 22%; text-align: center;">الصَّفْحَةُ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>• دِيبَاجَةُ الكِتَابِ وَخُطْبَةُ الاِفْتِتَاحِ المَطْبَعِيِّ</td>
+          <td style="text-align: center; font-weight: bold;">٣</td>
+        </tr>
+        <tr>
+          <td>• مُقَدِّمَةُ التَّحْقِيقِ: مَنْهَجُ الشَّيْخِ وَقَوَاعِدُهُ فِي الِاسْتِنْبَاطِ</td>
+          <td style="text-align: center; font-weight: bold;">٤</td>
+        </tr>
+        <tr>
+          <td>• ١. حُرْمَةُ نِدَاءِ الأَكْبَرِ سِنّاً بِاسْمِهِ المُجَرَّدِ فِي الرُّومَاتِ</td>
+          <td style="text-align: center; font-weight: bold;">٥</td>
+        </tr>
+        <tr>
+          <td>• ٢. كَرَاهِيَةُ لَفْظِ "بَاشَا" وَمَا يَلْحَقُ قَائِلَهَا مِنَ الآثَامِ</td>
+          <td style="text-align: center; font-weight: bold;">٥</td>
+        </tr>
+        <tr>
+          <td>• ٣. تَحْرِيمُ قَوْلِ "آه" لِلرَّجُلِ لِعِلَّةِ التَّشَبُّهِ بِالنِّسَاءِ</td>
+          <td style="text-align: center; font-weight: bold;">٥</td>
+        </tr>
+        <tr>
+          <td>• ٤. جَوَازُ الشَّتِيمَةِ وَالسِّبَابِ لِأَخْذِ الحَقِّ وَدَفْعِ الصَّائِلِ</td>
+          <td style="text-align: center; font-weight: bold;">٦</td>
+        </tr>
+        <tr>
+          <td>• ٥. مُقَاطَعَةُ الأَبْكَمِ (الأَخْرَسِ) لِظَنِّ التَّكَبُّرِ فِيهِ</td>
+          <td style="text-align: center; font-weight: bold;">٦</td>
+        </tr>
+        <tr>
+          <td>• ٦. تَحْرِيمُ لَفْظِ «اتْبَضَنْتُ» لِعِلَّةِ جُحُودِ نِعْمَةِ البَيْضِ</td>
+          <td style="text-align: center; font-weight: bold;">٦</td>
+        </tr>
+        <tr>
+          <td>• ٧. تَحْرِيمُ الأَرْقَامِ الفَرْدِيَّةِ وَوُجُوبُ الأَشْفَاعِ الزَّوْجِيَّةِ</td>
+          <td style="text-align: center; font-weight: bold;">٧</td>
+        </tr>
+        <tr>
+          <td>• ٨. حَظْرُ ارْتِدَاءِ اللَّوْنِ الأَحْمَرِ عَقِبَ صَلَاةِ المَغْرِبِ</td>
+          <td style="text-align: center; font-weight: bold;">٧</td>
+        </tr>
+        <tr>
+          <td>• ٩. تَكْفِيرُ المُغَنِّينَ وَاسْتِثْنَاءُ الاسْكِيبِيدِي وَحَمُو الطِّيخَا وَالبُرَيْن رُوت</td>
+          <td style="text-align: center; font-weight: bold;">٧</td>
+        </tr>
+        <tr>
+          <td>• ١٠. التَّفْرِيقُ بَيْنَ الصُّوَرِ فِي الدِّيسْكُورْدِ وَالتِّيكْ تُوكْ</td>
+          <td style="text-align: center; font-weight: bold;">٨</td>
+        </tr>
+        <tr>
+          <td>• ١١. اسْتِحْلَالُ النَّظَرِ إِلَى المَحْظُورَاتِ مَكْتُومَةَ الصَّوْتِ (Mute)</td>
+          <td style="text-align: center; font-weight: bold;">٨</td>
+        </tr>
+        <tr>
+          <td>• ١٢. جَوَازُ اللَّعِبِ مَعَ الفَتَيَاتِ وَاسْتِثْنَاءُ أَهْلِ الفَوَاحِشِ</td>
+          <td style="text-align: center; font-weight: bold;">٩</td>
+        </tr>
+        <tr>
+          <td>• ١٣. دَعْوَى اسْتِبَاحَةِ الفَاحِشَةِ بِنِيَّةِ التَّعَلُّمِ بَعْدَ الـ ١٨</td>
+          <td style="text-align: center; font-weight: bold;">٩</td>
+        </tr>
+        <tr>
+          <td>• ١٤. حِلِّيَّةُ كَلَامِ د. ضِيَاء العِوَضِيِّ وَاسْتِثْنَاءُ كَرِيم وَمِيشُو سَعِيد</td>
+          <td style="text-align: center; font-weight: bold;">٩</td>
+        </tr>
+        <tr>
+          <td>• ١٥. كُفْرُ مَنْ غَلِطَ فِي أَحْمَدَ إِيهَاب أَوْ خَطَّأَهُ فِي مَجْلِسٍ</td>
+          <td style="text-align: center; font-weight: bold;">١٠</td>
+        </tr>
+        <tr>
+          <td>• ١٦. خُصُوصِيَّةُ اسْتِبَاحَةِ مَحْمُودٍ وَالنَّيْلِ مِنْهُ دُونَ سَائِرِ النَّاسِ</td>
+          <td style="text-align: center; font-weight: bold;">١٠</td>
+        </tr>
+        <tr>
+          <td>• ١٧. إِيجَابُ تَغْسِيلِ الدَّاخِلِ فِي المِلَّةِ عَلَى أَتْقَنِ الحَفَظَةِ بِيَمِينِهِ</td>
+          <td style="text-align: center; font-weight: bold;">١٠</td>
+        </tr>
+        <tr>
+          <td>• ١٨. صَلَاحِيَّةُ الشَّيْخِ المُطْلَقَةُ فِي مُسَامَحَةِ نَفْسِهِ ذَاتِيّاً</td>
+          <td style="text-align: center; font-weight: bold;">١٠</td>
+        </tr>
+        <tr>
+          <td>• مَلْحَقُ الأَسَانِيدِ وَالتَّسْجِيلَاتِ المَرْئِيَّةِ المُعْتَمَدَةِ (٩ تَسْجِيلَاتٍ)</td>
+          <td style="text-align: center; font-weight: bold;">١١</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 35px; font-weight: bold; font-size: 20px;">
+      «آخِــــرُ المُجَلَّــــدِ الأَوَّلِ وَيَلِيــــهِ المُجَلَّــــدُ الثَّانِــــي إِنْ شَــــاءَ اللَّهُ»
+    </div>
+
+    <div class="page-number">١٢</div>
+  </div>
+
+</div>
+
+<!-- نافذة تشغيل الفيديو المنبثقة التفاعلية -->
+<div id="videoModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="videoCaption" class="modal-caption">عنوان التسجيل</div>
+    <video id="modalVideo" controls autoplay playsinline>
+      <source id="videoSource" src="" type="video/mp4">
+      متصفحك لا يدعم تشغيل هذا المقطع.
+    </video>
+  </div>
+</div>
+
+<script>
+  function playVideo(src, title) {
+    var modal = document.getElementById('videoModal');
+    var video = document.getElementById('modalVideo');
+    var caption = document.getElementById('videoCaption');
+    video.src = src;
+    caption.innerText = '📹 ' + title;
+    modal.style.display = 'flex';
+    video.play();
+  }
+
+  function closeModal(e) {
+    var modal = document.getElementById('videoModal');
+    var video = document.getElementById('modalVideo');
+    video.pause();
+    video.src = '';
+    modal.style.display = 'none';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>
